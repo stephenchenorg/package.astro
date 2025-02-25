@@ -27,13 +27,13 @@
     "access": "public"
   },
   "scripts": {
-    "build": "tsup",
+    "build": "mkdist --declaration --ext=js",
     "type-check": "tsc --noEmit",
     "prepack": "npm run build"
   },
   "dependencies": {},
   "devDependencies": {
-    "tsup": "^8.3.6",
+    "mkdist": "^2.2.0",
     "typescript": "~5.6.3"
   }
 }
