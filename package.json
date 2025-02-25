@@ -45,6 +45,9 @@
   "publishConfig": {
     "access": "public"
   },
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "build": "mkdist --declaration --ext=js",
     "code-check": "astro check",
