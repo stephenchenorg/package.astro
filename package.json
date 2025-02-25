@@ -13,13 +13,32 @@
     "astro"
   ],
   "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
+    "./company-setting": {
+      "types": "./dist/company-setting/index.d.ts",
+      "import": "./dist/company-setting/index.js"
+    },
+    "./image": {
+      "types": "./dist/image/index.d.ts",
+      "import": "./dist/image/index.js"
+    },
+    "./page": {
+      "types": "./dist/page/index.d.ts",
+      "import": "./dist/page/index.js"
+    },
+    "./pagination": {
+      "types": "./dist/pagination/index.d.ts",
+      "import": "./dist/pagination/index.js"
+    },
+    "./query-params": {
+      "types": "./dist/query-params/index.d.ts",
+      "import": "./dist/query-params/index.js"
     }
   },
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": ["./dist/*"]
+    }
+  },
   "files": [
     "dist"
   ],
@@ -28,12 +47,24 @@
   },
   "scripts": {
     "build": "mkdist --declaration --ext=js",
-    "type-check": "tsc --noEmit",
+    "code-check": "astro check",
     "prepack": "npm run build"
   },
-  "dependencies": {},
+  "peerDependencies": {
+    "astro": "^5.0.0"
+  },
+  "dependencies": {
+    "awesome-graphql-client": "^2.1.0",
+    "graphql": "^16.10.0",
+    "graphql-tag": "^2.12.6",
+    "nanostores": "^0.11.4",
+    "query-string": "^9.1.1"
+  },
   "devDependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@graphql-typed-document-node/core": "^3.2.0",
+    "astro": "^5.3.1",
     "mkdist": "^2.2.0",
-    "typescript": "~5.6.3"
+    "typescript": "~5.7.2"
   }
 }
