@@ -1,7 +1,39 @@
 {
+  "name": "@stephenchenorg/astro",
   "type": "module",
-  "private": true,
-  "scripts": {},
+  "version": "0.0.1",
+  "description": "Stephenchenorg Astro 前端通用套件",
+  "license": "MIT",
+  "homepage": "https://stephenchenorg-astro.netlify.app",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stephenchenorg/astro.git"
+  },
+  "keywords": [
+    "astro"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsup",
+    "type-check": "tsc --noEmit",
+    "prepack": "npm run build"
+  },
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "tsup": "^8.3.6",
+    "typescript": "~5.6.3"
+  }
 }
