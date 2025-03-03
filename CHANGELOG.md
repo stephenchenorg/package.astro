@@ -4,6 +4,10 @@
 
 * Nothing yet!
 
+## v1.0.1 - 2025-03-03
+
+* 將 `@graphql-typed-document-node/core` 移至 `dependencies`
+
 ## v1.0.0 - 2025-03-03
 
 * 模組：`api`
