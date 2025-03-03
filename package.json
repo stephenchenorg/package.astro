@@ -64,6 +64,7 @@
     "astro": "^5.0.0"
   },
   "dependencies": {
+    "@graphql-typed-document-node/core": "^3.2.0",
     "awesome-graphql-client": "^2.1.0",
     "graphql": "^16.10.0",
     "graphql-tag": "^2.12.6",
@@ -72,7 +73,6 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.4",
-    "@graphql-typed-document-node/core": "^3.2.0",
     "astro": "^5.4.1",
     "bumpp": "^10.0.3",
     "mkdist": "^2.2.0",
