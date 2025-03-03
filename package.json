@@ -40,7 +40,9 @@
   },
   "typesVersions": {
     "*": {
-      "*": ["./dist/*"]
+      "*": [
+        "./dist/*"
+      ]
     }
   },
   "files": [
@@ -55,7 +57,8 @@
   "scripts": {
     "build": "mkdist --declaration --ext=js",
     "code-check": "astro check",
-    "prepack": "npm run build"
+    "prepack": "npm run build",
+    "release": "bumpp --commit \"Release v%s\" && npm publish"
   },
   "peerDependencies": {
     "astro": "^5.0.0"
@@ -71,6 +74,7 @@
     "@astrojs/check": "^0.9.4",
     "@graphql-typed-document-node/core": "^3.2.0",
     "astro": "^5.3.1",
+    "bumpp": "^10.0.3",
     "mkdist": "^2.2.0",
     "typescript": "~5.7.2"
   }
