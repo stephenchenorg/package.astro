@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+* Nothing yet!
+
+## v1.1.0 - 2025-03-03
+
 * 新增 `createGraphQLAPI()` 函數
 
 ## v1.0.1 - 2025-03-03
