@@ -4,6 +4,10 @@
 
 * Nothing yet!
 
+## v1.1.2 - 2025-03-03
+
+* 修復 `graphQLAPI()` 函數缺少回傳類型
+
 ## v1.1.1 - 2025-03-03
 
 * 調整 `createGraphQLAPI()` 函數

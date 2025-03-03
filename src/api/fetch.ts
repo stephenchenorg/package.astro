@@ -15,7 +15,7 @@ export function createGraphQLAPI(options: CreateGraphQLAPIOptions) {
   >(
     query: TypedDocumentNode<TData, TVariables>,
     variables: TVariables = {} as TVariables,
-  ) {
+  ): Promise<TData> {
     const client = new AwesomeGraphQLClient<TypedDocumentNode>({
       endpoint: options.endpoint,
       formatQuery: (query: TypedDocumentNode) => print(query),
