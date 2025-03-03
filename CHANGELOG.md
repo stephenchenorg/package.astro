@@ -1,6 +1,10 @@
-# CHANGELOG
+# Changelog
 
 ## Unreleased
+
+* Nothing yet!
+
+## v1.0.0 - 2025-03-03
 
 * 模組：`api`
 * 模組：`company-setting`
