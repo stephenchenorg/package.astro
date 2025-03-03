@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-* Nothing yet!
+* 新增 `createCompanySetting()` 輔助函數
 
 ## v1.1.2 - 2025-03-03
 
