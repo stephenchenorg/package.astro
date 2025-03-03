@@ -1,5 +1,5 @@
 ---
-import { isPlainTextField, isPlainTextareaField, isContentField, isImageField } from '../field/helpers'
+import { isContentField, isImageField, isPlainTextField, isPlainTextareaField } from '../field/helpers'
 import type { PageField } from '../types'
 import { ResponsiveImage } from '../../image'
 
@@ -16,10 +16,10 @@ const field = fields.find(field => field.key === key)
 
 {
   field && (
-    isPlainTextField(field) ? <Fragment set:text={field.content} /> :
-    isPlainTextareaField(field) ? <Fragment set:html={field.content} /> :
-    isContentField(field) ? <Fragment set:html={field.content} /> :
-    isImageField(field) ? (
+    isPlainTextField(field) ? <Fragment set:text={field.content} />
+    : isPlainTextareaField(field) ? <Fragment set:html={field.content} />
+    : isContentField(field) ? <Fragment set:html={field.content} />
+    : isImageField(field) ? (
       <ResponsiveImage
         desktop={field.image.desktop}
         desktopBlur={field.image.desktop_blur}
@@ -28,7 +28,7 @@ const field = fields.find(field => field.key === key)
         alt={`Image of ${key}`}
         {...attributes}
       />
-    ) :
-    null
+    )
+    : null
   )
 }

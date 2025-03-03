@@ -1,4 +1,4 @@
-import type { PageField, PagePlainTextField, PagePlainTextareaField, PageContentField, PageImageField } from '../types'
+import type { PageContentField, PageField, PageImageField, PagePlainTextField, PagePlainTextareaField } from '../types'
 
 export function isPlainTextField(field: PageField): field is PagePlainTextField {
   return field.type === 'text'
@@ -17,14 +17,14 @@ export function isImageField(field: PageField): field is PageImageField {
 }
 
 export function pageTextField(fields: PageField[], key: string) {
-  const field = fields.find((field) => field.key === key && isPlainTextField(field))
+  const field = fields.find(field => field.key === key && isPlainTextField(field))
   return field
     ? field.content
     : ''
 }
 
 export function pageImageFieldForBackground(fields: PageField[], key: string) {
-  const field = fields.find((field) => field.key === key && isImageField(field))
+  const field = fields.find(field => field.key === key && isImageField(field))
   return field
     ? `background-image: url('${field.image.desktop}');`
     : ''
