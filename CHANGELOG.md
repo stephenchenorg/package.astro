@@ -4,6 +4,10 @@
 
 * Nothing yet!
 
+## v1.1.1 - 2025-03-03
+
+* 調整 `createGraphQLAPI()` 函數
+
 ## v1.1.0 - 2025-03-03
 
 * 新增 `createGraphQLAPI()` 函數
