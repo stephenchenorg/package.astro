@@ -7,7 +7,7 @@
   "homepage": "https://stephenchenorg-astro.netlify.app",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/stephenchenorg/astro.git"
+    "url": "git+https://github.com/stephenchenorg/package.astro.git"
   },
   "keywords": [
     "astro"
