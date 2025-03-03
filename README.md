@@ -20,5 +20,5 @@ yarn build
 
 ```bash
 npm login
-npm publish
+npm run release
 ```
