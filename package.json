@@ -73,9 +73,9 @@
   "devDependencies": {
     "@astrojs/check": "^0.9.4",
     "@graphql-typed-document-node/core": "^3.2.0",
-    "astro": "^5.3.1",
+    "astro": "^5.4.1",
     "bumpp": "^10.0.3",
     "mkdist": "^2.2.0",
-    "typescript": "~5.7.2"
+    "typescript": "~5.7.3"
   }
 }
