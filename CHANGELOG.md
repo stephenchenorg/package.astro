@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-* Nothing yet!
+* 重命名 `seoMeta()` 函數的參數名稱
 
 ## v1.2.0 - 2025-03-03
 
