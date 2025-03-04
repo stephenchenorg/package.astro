@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+* Nothing yet!
+
+## v1.2.2 - 2025-03-04
+
 * 修復 `<ResponsiveImage>` 元件顯示在 HTML 的 blur 屬性
 
 ## v1.2.1 - 2025-03-04
