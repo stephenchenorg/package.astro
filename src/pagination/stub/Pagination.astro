@@ -12,10 +12,14 @@ const {
   items,
   showPagination,
   currentPage,
+  canFirst,
   canPrev,
   canNext,
+  canLast,
+  firstUrl,
   prevUrl,
   nextUrl,
+  lastUrl,
   getUrl,
 } = usePagination({
   total: Astro.props.total,
@@ -28,12 +32,14 @@ const {
 
 {showPagination && (
   <div>
-    {canPrev && <a href={prevUrl}>&lt;</a>}
+    {canFirst && <a href={firstUrl}>First</a>}
+    {canPrev && <a href={prevUrl}>Previous</a>}
     {items.map(page =>
       page === currentPage
         ? <span>{page}</span>
         : <a href={getUrl(page)}>{page}</a>
     )}
-    {canNext && <a href={nextUrl}>&gt;</a>}
+    {canNext && <a href={nextUrl}>Next</a>}
+    {canLast && <a href={lastUrl}>Last</a>}
   </div>
 )}
