@@ -4,9 +4,27 @@ interface Props extends astroHTML.JSX.ImgHTMLAttributes {
   desktopBlur?: string | null
   mobile?: string | null
   mobileBlur?: string | null
+
+  // GraphQL image props
+  desktop_blur?: string | null
+  mobile_blur?: string | null
 }
 
-const { desktop, desktopBlur, mobile, mobileBlur, src: _, ...attributes } = Astro.props
+const {
+  desktop,
+  desktopBlur: _desktopBlur,
+  mobile,
+  mobileBlur: _mobileBlur,
+
+  desktop_blur: _desktop_blur,
+  mobile_blur: _mobile_blur,
+  src: _src,
+
+  ...attributes
+} = Astro.props
+
+// const desktopBlur = Astro.props.desktopBlur || Astro.props.desktop_blur
+// const mobileBlur = Astro.props.mobileBlur || Astro.props.mobile_blur
 
 const breakpoint = 768
 ---
