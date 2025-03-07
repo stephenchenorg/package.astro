@@ -3,6 +3,12 @@ import { urlConfigStore } from './store'
 import { cleanParams, mergeUrlParams } from './utils'
 import type { UrlConfig } from './types'
 
+declare global {
+  interface Window {
+    __astro_provide_url_config__?: UrlConfig
+  }
+}
+
 export interface QueryParamsUrlOptions {
   transformParams?: (params: Record<string, any>) => Record<string, any>
 }

@@ -13,14 +13,12 @@ const config: UrlConfig = {
 ---
 
 <script is:inline define:vars={{ config }}>
-// eslint-disable-next-line style/semi
 window.__astro_provide_url_config__ = config;
 </script>
 
 <script>
 import { urlConfigStore } from '../store'
 
-// @ts-ignore
 const props = window.__astro_provide_url_config__
 
 const baseUrl: string = props?.baseUrl || location.pathname

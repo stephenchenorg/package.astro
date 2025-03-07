@@ -16,3 +16,9 @@ export default ycs77({
       'no-undef': 'off',
     },
   })
+  .append({
+    files: ['**/ProvideUrlConfig.astro/*.ts'],
+    rules: {
+      'style/semi': 'off',
+    },
+  })
