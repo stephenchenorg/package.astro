@@ -1,7 +1,7 @@
 {
   "name": "@stephenchenorg/astro",
   "type": "module",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Stephenchenorg Astro 前端通用套件",
   "license": "MIT",
   "homepage": "https://stephenchenorg-astro.netlify.app",
