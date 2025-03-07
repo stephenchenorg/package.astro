@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-* Nothing yet!
+* 修復 query params 讀取錯誤的 `urlConfigStore`
 
 ## v1.2.2 - 2025-03-04
 
