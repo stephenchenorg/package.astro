@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-* Nothing yet!
+* 新增 `GraphQLRequestExtensions` 關於 validation Error 的文字訊息
 
 ## v1.2.3 - 2025-03-08
 

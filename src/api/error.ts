@@ -7,6 +7,8 @@ interface GraphQLRequestExtensions {
     line: number
     call: number
   }[]
+  validation?: Record<string, string[]>
+  category?: string
 }
 
 export class GraphQLRequestError extends Error {
