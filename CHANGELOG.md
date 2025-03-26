@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+* Nothing yet!
+
+## v1.3.0 - 2025-03-27
+
 * 新增 graphQLAPI 的 headers 參數
 
 ## v1.2.4 - 2025-03-25
