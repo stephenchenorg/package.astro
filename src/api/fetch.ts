@@ -6,6 +6,7 @@ import { GraphQLRequestError } from './error'
 export interface CreateGraphQLAPIOptions {
   endpoint: string
   defaultVariables?: Record<string, any> | (() => Record<string, any>)
+  headers?: Record<string, string> | (() => Record<string, string>)
 }
 
 export function createGraphQLAPI(options: CreateGraphQLAPIOptions) {
@@ -25,12 +26,18 @@ export function createGraphQLAPI(options: CreateGraphQLAPIOptions) {
       ? options.defaultVariables()
       : options.defaultVariables ?? {}
 
+    const fetchOptions = {
+      headers: typeof options.headers === 'function'
+        ? options.headers()
+        : options.headers,
+    } satisfies RequestInit
+
     return new Promise<TData>((resolve, reject) => {
       client
         .request<TData, TVariables>(query, {
           ...defaultVariables,
           ...variables,
-        } as TVariables)
+        } as TVariables, fetchOptions)
         .then(data => resolve(data))
         .catch(error => {
           if (error instanceof AwesomeGraphQLRequestError) {
