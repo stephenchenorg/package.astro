@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+* Nothing yet!
+
+## v1.5.0 - 2025-03-27
+
 * 改進 `graphQLAPI()` 函數
 
 ## v1.4.0 - 2025-03-27
