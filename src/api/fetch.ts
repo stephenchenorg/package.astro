@@ -7,38 +7,44 @@ import type { GraphQLFieldError, GraphQLRequestErrorOptions } from './error'
 export interface CreateGraphQLAPIOptions {
   endpoint: string
   defaultVariables?: Record<string, any> | (() => Record<string, any>)
-  headers?: Record<string, string> | (() => Record<string, string>)
+  fetchOptions?: RequestInit | (() => RequestInit)
 }
 
 export function createGraphQLAPI(options: CreateGraphQLAPIOptions) {
+  const client = new AwesomeGraphQLClient<TypedDocumentNode>({
+    endpoint: options.endpoint,
+    formatQuery: (query: TypedDocumentNode) => print(query),
+  })
+
   return function graphQLAPI<
     TData extends Record<string, any>,
     TVariables extends Record<string, any> = Record<string, any>,
   >(
     query: TypedDocumentNode<TData, TVariables>,
-    variables: TVariables = {} as TVariables,
+    variables?: TVariables,
+    fetchOptions?: RequestInit,
   ): Promise<TData> {
-    const client = new AwesomeGraphQLClient<TypedDocumentNode>({
-      endpoint: options.endpoint,
-      formatQuery: (query: TypedDocumentNode) => print(query),
-    })
-
-    const defaultVariables: Record<string, any> = typeof options.defaultVariables === 'function'
+    const defaultVariables: Record<string, any> | undefined = typeof options.defaultVariables === 'function'
       ? options.defaultVariables()
-      : options.defaultVariables ?? {}
+      : options.defaultVariables
 
-    const fetchOptions = {
-      headers: typeof options.headers === 'function'
-        ? options.headers()
-        : options.headers,
-    } satisfies RequestInit
+    const defaultFetchOptions: RequestInit | undefined = typeof options.fetchOptions === 'function'
+      ? options.fetchOptions()
+      : options.fetchOptions
 
     return new Promise<TData>((resolve, reject) => {
       client
         .request<TData, TVariables>(query, {
           ...defaultVariables,
           ...variables,
-        } as TVariables, fetchOptions)
+        } as TVariables, {
+          ...defaultFetchOptions,
+          ...fetchOptions,
+          headers: {
+            ...defaultFetchOptions?.headers,
+            ...fetchOptions?.headers,
+          },
+        })
         .then(data => resolve(data))
         .catch(error => {
           if (error instanceof AwesomeGraphQLRequestError) {

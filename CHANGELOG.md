@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-* Nothing yet!
+* 改進 `graphQLAPI()` 函數
 
 ## v1.4.0 - 2025-03-27
 
