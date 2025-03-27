@@ -56,7 +56,7 @@
   },
   "scripts": {
     "build": "mkdist --declaration --ext=js",
-    "lint": "eslint .",
+    "lint": "eslint \"*.{js,ts,json}\" \"src/**/*.ts\"",
     "code-check": "astro check && npm run lint",
     "prepack": "npm run build",
     "release": "bumpp --commit \"Release v%s\" && npm publish"
