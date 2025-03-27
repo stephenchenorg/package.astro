@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+* Nothing yet!
+
+## v1.4.0 - 2025-03-27
+
 * 更新 GraphQL 錯誤處理
 
 ## v1.3.0 - 2025-03-27
