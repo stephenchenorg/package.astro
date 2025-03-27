@@ -1,4 +1,16 @@
-interface GraphQLRequestExtensions {
+export interface GraphQLFieldError {
+  code?: number
+  message: string
+  locations?: {
+    line: number
+    column: number
+  }[]
+  path?: (string | number)[]
+  extensions?: GraphQLRequestExtensions
+  data?: Record<string, any>
+}
+
+export interface GraphQLRequestExtensions {
   debugMessage?: string
   file?: string
   line?: number
@@ -7,36 +19,42 @@ interface GraphQLRequestExtensions {
     line: number
     call: number
   }[]
-  validation?: Record<string, string[]>
-  category?: string
+}
+
+export interface GraphQLRequestErrorOptions {
+  code?: number
+  message: string
+  query: string
+  variables?: Record<string, any>
+  extensions?: GraphQLRequestExtensions
+  fieldErrors?: GraphQLFieldError[]
 }
 
 export class GraphQLRequestError extends Error {
   type = 'GraphQLRequestError'
   name = 'GraphQLRequestError'
 
-  public title = 'GraphQL request error.'
-  public originalMessage: string
-  public query: string
-  public variables: Record<string, any> | undefined
-  public extensions: GraphQLRequestExtensions | undefined
+  title = 'GraphQL request error.'
+  code: number | undefined
+  originalMessage: string
+  query: string
+  variables: Record<string, any> | undefined
+  extensions: GraphQLRequestExtensions | undefined
+  fieldErrors: GraphQLFieldError[] | undefined
 
-  constructor(props: {
-    message: string
-    query: string
-    variables?: Record<string, any>
-    extensions?: GraphQLRequestExtensions
-  }, options?: ErrorOptions) {
-    const { message, query, variables, extensions } = props
+  constructor(props: GraphQLRequestErrorOptions, options?: ErrorOptions) {
+    const { code, message, query, variables, extensions, fieldErrors } = props
 
     super('GraphQL request error.', options)
 
     const originalStack = this.stack
     this.title = 'GraphQL request error.'
+    this.code = code
     this.originalMessage = message
     this.query = query
     this.variables = variables
     this.extensions = extensions
+    this.fieldErrors = fieldErrors
     this.message = this.buildMessage()
     this.stack = originalStack
   }
@@ -47,6 +65,11 @@ export class GraphQLRequestError extends Error {
 
   private buildMessage() {
     let message = `${this.originalMessage}\n`
+
+    if (this.code) {
+      message += '\n'
+      message += `[code]\n${this.code}\n`
+    }
 
     if (this.extensions) {
       if (this.extensions.debugMessage) {
@@ -89,5 +112,23 @@ export class GraphQLRequestError extends Error {
 
   static is(err: unknown): err is GraphQLRequestError {
     return (err as GraphQLRequestError).type === 'GraphQLRequestError'
+  }
+}
+
+export class GraphQLNotFoundError extends GraphQLRequestError {
+  type = 'GraphQLNotFoundError'
+  name = 'GraphQLNotFoundError'
+}
+
+export class GraphQLValidationError extends GraphQLRequestError {
+  type = 'GraphQLValidationError'
+  name = 'GraphQLValidationError'
+
+  errors: Record<string, string[]>
+
+  constructor(props: GraphQLRequestErrorOptions, options?: ErrorOptions) {
+    super(props, options)
+
+    this.errors = this.fieldErrors?.[0]?.data?.validation || {}
   }
 }

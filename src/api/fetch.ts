@@ -1,7 +1,8 @@
 import { AwesomeGraphQLClient, GraphQLRequestError as AwesomeGraphQLRequestError } from 'awesome-graphql-client'
 import type { TypedDocumentNode } from '@graphql-typed-document-node/core'
 import { print } from 'graphql/language/printer'
-import { GraphQLRequestError } from './error'
+import { GraphQLNotFoundError, GraphQLRequestError, GraphQLValidationError } from './error'
+import type { GraphQLFieldError, GraphQLRequestErrorOptions } from './error'
 
 export interface CreateGraphQLAPIOptions {
   endpoint: string
@@ -41,12 +42,23 @@ export function createGraphQLAPI(options: CreateGraphQLAPIOptions) {
         .then(data => resolve(data))
         .catch(error => {
           if (error instanceof AwesomeGraphQLRequestError) {
-            reject(new GraphQLRequestError({
+            const fieldError = error.fieldErrors?.[0] as GraphQLFieldError | undefined
+            const code = fieldError?.code
+            const errorProps = <GraphQLRequestErrorOptions>{
+              code,
               message: error.message,
               query: error.query,
               variables: error.variables,
               extensions: error.extensions,
-            }))
+              fieldErrors: error.fieldErrors,
+            }
+
+            if (code === 404) {
+              reject(new GraphQLNotFoundError(errorProps))
+            } else if (code === 422) {
+              reject(new GraphQLValidationError(errorProps))
+            }
+            reject(new GraphQLRequestError(errorProps))
           } else {
             reject(error)
           }
