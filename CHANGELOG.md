@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+* Nothing yet!
+
+## v1.6.0 - 2025-05-06
+
 * 更新 `nanostores` 版本至 `^1.0`
 
 ## v1.5.0 - 2025-03-27
