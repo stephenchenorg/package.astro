@@ -1,3 +1,4 @@
+import type { APIContext } from 'astro'
 import { AwesomeGraphQLClient, GraphQLRequestError as AwesomeGraphQLRequestError } from 'awesome-graphql-client'
 import type { TypedDocumentNode } from '@graphql-typed-document-node/core'
 import { print } from 'graphql/language/printer'
@@ -6,13 +7,13 @@ import type { GraphQLFieldError, GraphQLRequestErrorOptions } from './error'
 
 export interface CreateGraphQLAPIOptions {
   endpoint: string
-  defaultVariables?: Record<string, any> | (() => Record<string, any>)
-  fetchOptions?: RequestInit | (() => RequestInit)
+  defaultVariables?: Record<string, any> | ((astroContext?: APIContext) => Record<string, any>)
+  fetchOptions?: RequestInit | ((astroContext?: APIContext) => RequestInit)
 }
 
-export function createGraphQLAPI(options: CreateGraphQLAPIOptions) {
+export function createGraphQLAPI(globalOptions: CreateGraphQLAPIOptions) {
   const client = new AwesomeGraphQLClient<TypedDocumentNode>({
-    endpoint: options.endpoint,
+    endpoint: globalOptions.endpoint,
     formatQuery: (query: TypedDocumentNode) => print(query),
   })
 
@@ -21,16 +22,21 @@ export function createGraphQLAPI(options: CreateGraphQLAPIOptions) {
     TVariables extends Record<string, any> = Record<string, any>,
   >(
     query: TypedDocumentNode<TData, TVariables>,
-    variables?: TVariables,
-    fetchOptions?: RequestInit,
+    options?: {
+      variables?: TVariables
+      fetchOptions?: RequestInit
+      Astro?: APIContext
+    },
   ): Promise<TData> {
-    const defaultVariables: Record<string, any> | undefined = typeof options.defaultVariables === 'function'
-      ? options.defaultVariables()
-      : options.defaultVariables
+    const { variables, fetchOptions, Astro: astroContext } = options || {}
 
-    const defaultFetchOptions: RequestInit | undefined = typeof options.fetchOptions === 'function'
-      ? options.fetchOptions()
-      : options.fetchOptions
+    const defaultVariables: Record<string, any> | undefined = typeof globalOptions.defaultVariables === 'function'
+      ? globalOptions.defaultVariables(astroContext)
+      : globalOptions.defaultVariables
+
+    const defaultFetchOptions: RequestInit | undefined = typeof globalOptions.fetchOptions === 'function'
+      ? globalOptions.fetchOptions(astroContext)
+      : globalOptions.fetchOptions
 
     return new Promise<TData>((resolve, reject) => {
       client

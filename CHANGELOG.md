@@ -2,7 +2,39 @@
 
 ## Unreleased
 
-* Nothing yet!
+* **[BREAKING]** 將 `graphQLAPI()` 函數參數全部移至 `options` 物件中
+* `createGraphQLAPI()` 函數新增注入 Astro 上下文變數
+
+### Migration
+
+v1.x 版本中的 `graphQLAPI()` 函數參數分別是 `query`, `variables`, `fetchOptions`：
+
+```ts
+import { gql, graphQLAPI } from '@/api'
+
+const data = await graphQLAPI<Data>(gql`
+  ...
+`, { slug: 'article-slug' }, {
+  headers: {
+    'Content-Type': 'application/json',
+  },
+})
+```
+
+而在 v2.0 中 `graphQLAPI()` 函數為了支援注入 Astro 上下文變數，因而將參數調整為 `options` 物件：
+
+```ts
+const data = await graphQLAPI<Data>(gql`
+  ...
+`, {
+  variables: { slug: 'article-slug' },
+  fetchOptions: {
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  },
+})
+```
 
 ## v1.6.0 - 2025-05-06
 
