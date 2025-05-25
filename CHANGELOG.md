@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+Nothing yet!
+
+## v2.0.0 - 2025-05-25
+
 * **[BREAKING]** 將 `graphQLAPI()` 函數參數全部移至 `options` 物件中
 * `createGraphQLAPI()` 函數新增注入 Astro 上下文變數
 
