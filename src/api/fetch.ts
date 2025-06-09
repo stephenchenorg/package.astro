@@ -1,9 +1,9 @@
-import type { APIContext } from 'astro'
-import { AwesomeGraphQLClient, GraphQLRequestError as AwesomeGraphQLRequestError } from 'awesome-graphql-client'
 import type { TypedDocumentNode } from '@graphql-typed-document-node/core'
+import type { APIContext } from 'astro'
+import type { GraphQLFieldError, GraphQLRequestErrorOptions } from './error'
+import { AwesomeGraphQLClient, GraphQLRequestError as AwesomeGraphQLRequestError } from 'awesome-graphql-client'
 import { print } from 'graphql/language/printer'
 import { GraphQLNotFoundError, GraphQLRequestError, GraphQLValidationError } from './error'
-import type { GraphQLFieldError, GraphQLRequestErrorOptions } from './error'
 
 export interface CreateGraphQLAPIOptions {
   endpoint: string

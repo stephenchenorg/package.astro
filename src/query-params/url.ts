@@ -1,7 +1,7 @@
+import type { UrlConfig } from './types'
 import qs from 'query-string'
 import { urlConfigStore } from './store'
 import { cleanParams, mergeUrlParams } from './utils'
-import type { UrlConfig } from './types'
 
 declare global {
   interface Window {

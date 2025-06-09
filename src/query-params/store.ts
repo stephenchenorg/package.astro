@@ -1,5 +1,5 @@
-import { atom } from 'nanostores'
 import type { UrlConfig } from './types'
+import { atom } from 'nanostores'
 
 export const urlConfigStore = atom<UrlConfig>({
   baseUrl: '',
