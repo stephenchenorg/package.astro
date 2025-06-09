@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+Nothing yet!
+
+## v3.0.0 - 2025-06-09
+
 * **[BREAKING]** 將 `pagination` 模組更名為 `pagination-astro`
 * 新增 `pagination-vue` 模組，且會作為預設的分頁模組
 
