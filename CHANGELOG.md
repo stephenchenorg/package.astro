@@ -2,7 +2,17 @@
 
 ## Unreleased
 
-Nothing yet!
+* **[BREAKING]** 將 `pagination` 模組更名為 `pagination-astro`
+* 新增 `pagination-vue` 模組，且會作為預設的分頁模組
+
+### Migration
+
+原本的 `pagination` 模組已經更名為 `pagination-astro`，如果你在使用 `pagination` 模組，請將 `Pagination.astro` 元件中的引入變更為 `pagination-astro`：
+
+```diff
+-import { usePagination } from '@stephenchenorg/astro/pagination'
++import { usePagination } from '@stephenchenorg/astro/pagination-astro'
+```
 
 ## v2.0.0 - 2025-05-25
 
