@@ -6,6 +6,7 @@ interface Props {
   perPage?: number
   visiblePages?: number
   currentPage?: number
+  class?: astroHTML.JSX.HTMLAttributes['class']
 }
 
 const {
@@ -31,7 +32,7 @@ const {
 ---
 
 {showPagination && (
-  <div>
+  <div class={Astro.props.class}>
     {canFirst && <a href={firstUrl}>First</a>}
     {canPrev && <a href={prevUrl}>Previous</a>}
     {items.map(page =>
