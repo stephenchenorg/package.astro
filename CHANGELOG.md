@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-Nothing yet!
+* 修復缺失的 `seo_description` 屬性
 
 ## v3.0.0 - 2025-06-09
 

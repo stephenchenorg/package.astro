@@ -10,7 +10,7 @@ export function seoMeta(options: UseSeoMetaOptions, modelMeta?: PageMeta): PageM
   return {
     title: modelMeta?.title || options.title,
     seo_title: modelMeta?.seo_title || options.seo_title || null,
-    seo_description: modelMeta?.seo_description || options.description || null,
+    seo_description: modelMeta?.seo_description || options.seo_description || options.description || null,
     seo_keyword: modelMeta?.seo_keyword || options.seo_keyword || null,
     seo_json_ld: modelMeta?.seo_json_ld || options.seo_json_ld || null,
     seo_head: modelMeta?.seo_head || options.seo_head,
