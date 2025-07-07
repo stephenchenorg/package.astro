@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+Nothing yet!
+
+## v3.1.0 - 2025-07-08
+
 * 新增 `queryParamsUrl()` 函數的 `clear` 參數
 
 ## v3.0.1 - 2025-07-05
