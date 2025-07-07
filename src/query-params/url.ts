@@ -10,6 +10,7 @@ declare global {
 }
 
 export interface QueryParamsUrlOptions {
+  clear?: boolean
   transformParams?: (params: Record<string, any>) => Record<string, any>
 }
 
@@ -22,19 +23,33 @@ export function queryParamsUrl(
   },
   options: QueryParamsUrlOptions = {}
 ) {
-  const { transformParams } = options
+  const {
+    clear = false,
+    transformParams,
+  } = options
 
+  // 如果是前端環境中，會自動從 store 中取得 urlConfig 設定
   const config = typeof window !== 'undefined'
     ? urlConfigStore.get()
     : urlConfig
 
-  let params = mergeUrlParams(config.params, additionalParams)
-  if (transformParams) {
-    params = transformParams(params)
-  }
-  const cleanedParams = cleanParams(params, config.defaultParams || {})
+  let params: Record<string, any> = {}
 
-  const queryString = qs.stringify(cleanedParams, {
+  if (!clear) {
+    // 如果有提供 urlConfig，則使用其 params，並合併當前傳入的 additionalParams
+    params = mergeUrlParams(config.params, additionalParams)
+
+    // 如果有傳入轉換函數，則對 params 進行轉換
+    if (transformParams) {
+      params = transformParams(params)
+    }
+
+    // 清除 params 中含有的參數預設值
+    params = cleanParams(params, config.defaultParams || {})
+  }
+
+  // 將 params 中的值轉換為 Query String 字串
+  const queryString = qs.stringify(params, {
     skipEmptyString: true,
     skipNull: true,
     sort: false,
