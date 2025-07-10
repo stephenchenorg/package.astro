@@ -1,4 +1,4 @@
-import ycs77, { GLOB_ASTRO, GLOB_SRC } from '@ycs77/eslint-config'
+import ycs77, { GLOB_SRC } from '@ycs77/eslint-config'
 
 export default ycs77({
   astro: true,
@@ -8,17 +8,5 @@ export default ycs77({
     files: [GLOB_SRC],
     rules: {
       'antfu/top-level-function': 'off',
-    },
-  })
-  .append({
-    files: [GLOB_ASTRO],
-    rules: {
-      'no-undef': 'off',
-    },
-  })
-  .append({
-    files: ['**/ProvideUrlConfig.astro/*.ts'],
-    rules: {
-      'style/semi': 'off',
     },
   })
