@@ -4,7 +4,9 @@ export function mergeUrlParams<
   return Object
     .keys(baseParams)
     .reduce((result, key) => {
-      if (Array.isArray(baseParams[key])) {
+      if (userParams[key] === null) {
+        result[key] = null
+      } else if (Array.isArray(baseParams[key])) {
         result[key] = Array.from(new Set([...baseParams[key], ...(userParams[key] || [])]))
       } else {
         result[key] = typeof userParams[key] !== 'undefined' ? userParams[key] : baseParams[key]

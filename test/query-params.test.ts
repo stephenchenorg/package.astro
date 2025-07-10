@@ -90,7 +90,7 @@ describe('Query Params', () => {
     const baseParams = {
       page: 1 as number | null,
       sort: 'asc',
-      tags: ['tag1', 'tag2'],
+      tags: ['tag1', 'tag2'] as string[] | null,
     }
 
     const userParams = {
@@ -101,7 +101,7 @@ describe('Query Params', () => {
     const expected = {
       page: null,
       sort: 'asc',
-      tags: ['tag1', 'tag2'],
+      tags: null,
     }
 
     const result = mergeUrlParams(baseParams, userParams)
