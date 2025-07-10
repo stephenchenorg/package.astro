@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+Nothing yet!
+
+## v3.1.1 - 2025-07-10
+
 * 修復 `mergeUrlParams()` 函數在傳入 `null` 值時，沒有覆蓋陣列值的行為
 
 ## v3.1.0 - 2025-07-08
