@@ -2,7 +2,11 @@
 
 ## Unreleased
 
-* 將 `product-sku` 模組重命名為 `product-variant`，及優化屬性、方法名稱
+Nothing yet!
+
+## v5.0.0 - 2025-07-13
+
+* **[BREAKING]** 將 `product-sku` 模組重命名為 `product-variant`，及優化屬性、方法名稱
 
 ## v4.0.3 - 2025-07-13
 
