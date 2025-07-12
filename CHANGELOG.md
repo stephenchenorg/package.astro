@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+Nothing yet!
+
+## v5.0.1 - 2025-07-13
+
 * 修復 `ProductVariant` interface 的 `price` 屬性類型錯誤
 
 ## v5.0.0 - 2025-07-13
