@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+Nothing yet!
+
+## v4.0.1 - 2025-07-13
+
 * 修復 `form-validator` 模組缺失導出的型別
 
 ## v4.0.0 - 2025-07-12
