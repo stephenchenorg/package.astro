@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-Nothing yet!
+* 修復 `form-validator` 模組不正確的導出路徑
 
 ## v4.0.2 - 2025-07-13
 

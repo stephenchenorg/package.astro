@@ -5,7 +5,8 @@
 <script setup lang="ts">
 import type { Rule } from '../types'
 import { inject, ref } from 'vue'
-import { formValidatorInjectionKey } from '../injectionKey'
+// Must be imported from the regular package path to avoid duplicate instances
+import { formValidatorInjectionKey } from '@stephenchenorg/astro/form-validator'
 
 const props = defineProps<{
   id: string
