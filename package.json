@@ -41,6 +41,10 @@
       "types": "./dist/pagination-vue/index.d.ts",
       "import": "./dist/pagination-vue/index.js"
     },
+    "./product-sku": {
+      "types": "./dist/product-sku/index.d.ts",
+      "import": "./dist/product-sku/index.js"
+    },
     "./query-params": {
       "types": "./dist/query-params/index.d.ts",
       "import": "./dist/query-params/index.js"
