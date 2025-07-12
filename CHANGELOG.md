@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+Nothing yet!
+
+## v4.0.0 - 2025-07-12
+
 * 新增 `form-validator` 模組
 * 新增 `product-sku` 模組
 * `query-params` 模組支援 `hash` 屬性
