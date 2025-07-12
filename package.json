@@ -21,6 +21,10 @@
       "types": "./dist/company-setting/index.d.ts",
       "import": "./dist/company-setting/index.js"
     },
+    "./form-validator": {
+      "types": "./dist/form-validator/index.d.ts",
+      "import": "./dist/form-validator/index.js"
+    },
     "./image": {
       "types": "./dist/image/index.d.ts",
       "import": "./dist/image/index.js"
@@ -85,6 +89,7 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.4",
+    "@astrojs/vue": "^5.1.0",
     "@ycs77/eslint-config": "^4.4.0",
     "astro": "^5.11.0",
     "bumpp": "^10.2.0",
