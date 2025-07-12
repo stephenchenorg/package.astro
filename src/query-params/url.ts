@@ -19,7 +19,6 @@ export function queryParamsUrl(
   urlConfig: UrlConfig = {
     baseUrl: '',
     params: {},
-    defaultParams: {},
   },
   options: QueryParamsUrlOptions = {}
 ) {
@@ -55,7 +54,7 @@ export function queryParamsUrl(
     sort: false,
   })
 
-  return `${config.baseUrl}${queryString ? '?' : ''}${queryString}`
+  return `${config.baseUrl}${queryString ? '?' : ''}${queryString}${config.hash ? `#${config.hash}` : ''}`
 }
 
 export function parseQueryParams(search: string) {

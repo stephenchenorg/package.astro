@@ -7,6 +7,7 @@ interface Props {
 
 const config: UrlConfig = {
   baseUrl: Astro.props.config.baseUrl,
+  hash: Astro.props.config.hash,
   params: Astro.props.config.params,
   defaultParams: Astro.props.config.defaultParams,
 }
@@ -22,8 +23,9 @@ import { urlConfigStore } from '@stephenchenorg/astro/query-params'
 const props = window.__astro_provide_url_config__
 
 const baseUrl: string = props?.baseUrl || location.pathname
+const hash: string = props?.hash || ''
 const params: Record<string, any> = props?.params || {}
 const defaultParams: Record<string, any> = props?.defaultParams || {}
 
-urlConfigStore.set({ baseUrl, params, defaultParams })
+urlConfigStore.set({ baseUrl, hash, params, defaultParams })
 </script>

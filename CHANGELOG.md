@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-Nothing yet!
+*  QueryParams 模組支援 `hash` 屬性
 
 ## v3.1.1 - 2025-07-10
 
