@@ -18,6 +18,7 @@ window.__astro_provide_url_config__ = config;
 </script>
 
 <script>
+// Must be imported from the regular package path to avoid duplicate instances
 import { urlConfigStore } from '@stephenchenorg/astro/query-params'
 
 const props = window.__astro_provide_url_config__

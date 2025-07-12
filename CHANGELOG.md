@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-Nothing yet!
+* 從常規套件路徑匯入，以修復重複 instance 的問題
 
 ## v4.0.1 - 2025-07-13
 

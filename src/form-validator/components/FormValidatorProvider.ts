@@ -1,8 +1,9 @@
 import type { PropType } from 'vue'
 import type { FormErrors } from '../types'
+// Must be imported from the regular package path to avoid duplicate instances
+import { formValidatorInjectionKey } from '@stephenchenorg/astro/form-validator'
 import { defineComponent, onMounted, provide } from 'vue'
-import { FormValidator } from '../form-validator'
-import { formValidatorInjectionKey } from '../injectionKey'
+import { FormValidator } from '../FormValidator'
 
 export interface FormValidatorProviderExposed {
   formValidator: () => FormValidator
