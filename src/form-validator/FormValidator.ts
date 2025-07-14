@@ -1,4 +1,5 @@
 import type { FormErrors, Rule } from './types'
+import { toRaw } from 'vue'
 
 export class FormValidator {
   rules: Record<string, Rule[]> = {}
@@ -46,7 +47,7 @@ export class FormValidator {
   }
 
   setErrors(errors: FormErrors): void {
-    this.errors = structuredClone(errors)
+    this.errors = structuredClone(toRaw(errors))
 
     this.errorsUpdatedCallbacks.forEach(callback => callback(this.errors))
   }

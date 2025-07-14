@@ -1,6 +1,6 @@
 import type { PropType } from 'vue'
 import type { FormErrors } from '../types'
-import { defineComponent, onMounted, provide } from 'vue'
+import { defineComponent, onMounted, provide, watch } from 'vue'
 import { FormValidator } from '../FormValidator'
 import { formValidatorInjectionKey } from '../injectionKey'
 
@@ -24,6 +24,10 @@ const FormValidatorProvider = defineComponent({
     onMounted(() => {
       formValidator.setErrors(props.errors)
     })
+
+    watch(() => props.errors, () => {
+      formValidator.setErrors(props.errors)
+    }, { deep: true })
 
     expose<FormValidatorProviderExposed>({
       formValidator: () => formValidator,
