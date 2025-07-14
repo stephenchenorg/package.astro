@@ -69,8 +69,8 @@
   "scripts": {
     "build": "mkdist --declaration --ext=js && sh ./scripts/postbuild.sh",
     "lint": "eslint \"*.{js,ts,json}\" \"src/**/*.ts\"",
-    "code-check": "astro check && npm run lint",
     "test": "vitest",
+    "code-check": "astro check && npm run lint && npm run test -- --run",
     "prepack": "npm run build",
     "release": "bumpp --commit \"Release v%s\" && npm publish"
   },
