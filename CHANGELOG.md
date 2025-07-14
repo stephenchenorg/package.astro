@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+Nothing yet!
+
+## v5.0.2 - 2025-07-15
+
 * 修復 `form-validator` 模組內不會自動更新 `errors` 的問題
 
 ## v5.0.1 - 2025-07-13
