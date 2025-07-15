@@ -1,8 +1,7 @@
+import type { FormErrors } from '@stephenchenorg/astro/form-validator'
 import type { PropType } from 'vue'
-import type { FormErrors } from '../types'
+import { FormValidator, formValidatorInjectionKey } from '@stephenchenorg/astro/form-validator'
 import { defineComponent, onMounted, provide, watch } from 'vue'
-import { FormValidator } from '../FormValidator'
-import { formValidatorInjectionKey } from '../injectionKey'
 
 export interface FormValidatorProviderExposed {
   formValidator: () => FormValidator

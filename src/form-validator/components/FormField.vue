@@ -3,9 +3,8 @@
 </template>
 
 <script setup lang="ts">
-import type { Rule } from '../types'
+import type { Rule } from '@stephenchenorg/astro/form-validator'
 import { inject, ref } from 'vue'
-// Must be imported from the regular package path to avoid duplicate instances
 import { formValidatorInjectionKey } from '@stephenchenorg/astro/form-validator'
 
 const props = defineProps<{

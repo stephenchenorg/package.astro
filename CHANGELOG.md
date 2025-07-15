@@ -2,7 +2,48 @@
 
 ## Unreleased
 
-Nothing yet!
+* 新增 Astro 與 Vue 元件的導出，以修復 Vite 重複導入的問題
+
+### Migration
+
+如果你有在專案中引入 Astro 或 Vue 元件，請遵照以下步驟更新：
+
+更新 `@stephenchenorg/astro/form-validator` 的元件導入方式：
+
+```diff
+-import { FormValidatorProvider } from '@stephenchenorg/astro/form-validator'
++import FormValidatorProvider from '@stephenchenorg/astro/form-validator/components/FormValidatorProvider'
+
+-import type { FormValidatorProviderExposed } from '@stephenchenorg/astro/form-validator'
++import type { FormValidatorProviderExposed } from '@stephenchenorg/astro/form-validator/components/FormValidatorProvider'
+
+-import { FormField } from '@stephenchenorg/astro/form-validator'
++import FormField from '@stephenchenorg/astro/form-validator/components/FormField.vue'
+```
+
+更新 `@stephenchenorg/astro/image` 的元件導入方式：
+
+```diff
+-import { Image } from '@stephenchenorg/astro/image'
++import Image from '@stephenchenorg/astro/image/components/Image.astro'
+
+-import { ResponsiveImage } from '@stephenchenorg/astro/image'
++import ResponsiveImage from '@stephenchenorg/astro/image/components/ResponsiveImage.astro'
+```
+
+更新 `@stephenchenorg/astro/page` 的元件導入方式：
+
+```diff
+-import { PageFieldRender } from '@stephenchenorg/astro/page'
++import PageFieldRender from '@stephenchenorg/astro/page/components/PageFieldRender.astro'
+```
+
+更新 `@stephenchenorg/astro/query-params` 的元件導入方式：
+
+```diff
+-import { ProvideUrlConfig } from '@stephenchenorg/astro/query-params'
++import ProvideUrlConfig from '@stephenchenorg/astro/query-params/components/ProvideUrlConfig.astro'
+```
 
 ## v5.0.2 - 2025-07-15
 

@@ -25,14 +25,22 @@
       "types": "./dist/form-validator/index.d.ts",
       "import": "./dist/form-validator/index.js"
     },
+    "./form-validator/components/FormField.vue": "./dist/form-validator/components/FormField.vue",
+    "./form-validator/components/FormValidatorProvider": {
+      "types": "./dist/form-validator/components/FormValidatorProvider.d.ts",
+      "import": "./dist/form-validator/components/FormValidatorProvider.js"
+    },
     "./image": {
       "types": "./dist/image/index.d.ts",
       "import": "./dist/image/index.js"
     },
+    "./image/components/Image.astro": "./dist/image/components/Image.astro",
+    "./image/components/ResponsiveImage.astro": "./dist/image/components/ResponsiveImage.astro",
     "./page": {
       "types": "./dist/page/index.d.ts",
       "import": "./dist/page/index.js"
     },
+    "./page/components/PageFieldRender.astro": "./dist/page/components/PageFieldRender.astro",
     "./pagination-astro": {
       "types": "./dist/pagination-astro/index.d.ts",
       "import": "./dist/pagination-astro/index.js"
@@ -48,7 +56,8 @@
     "./query-params": {
       "types": "./dist/query-params/index.d.ts",
       "import": "./dist/query-params/index.js"
-    }
+    },
+    "./query-params/components/ProvideUrlConfig.astro": "./dist/query-params/components/ProvideUrlConfig.astro"
   },
   "typesVersions": {
     "*": {
