@@ -1,6 +1,6 @@
 import type { PropType } from 'vue'
 import type { FormValidator } from '../FormValidator'
-import type { Rule } from '../types'
+import type { FormRule } from '../types'
 import { defineComponent, ref } from 'vue'
 import { useFormValidator } from '../useFormValidator'
 
@@ -16,7 +16,7 @@ const FormField = defineComponent({
       required: true,
     },
     rules: {
-      type: Object as PropType<Rule[]>,
+      type: Object as PropType<FormRule[]>,
       default: () => [],
     },
   },

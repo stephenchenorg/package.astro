@@ -1,6 +1,6 @@
 export type FormErrors = Record<string, string[]>
 
-export interface Rule {
+export interface FormRule {
   validate: (value: any) => boolean
   message: string
 }

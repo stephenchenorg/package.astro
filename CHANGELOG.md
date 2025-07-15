@@ -3,7 +3,8 @@
 ## Unreleased
 
 * 新增 Astro 與 Vue 元件的導出，以修復 Vite 重複導入的問題
-* 新增 `useFormValidator()` composable 函數
+* 新增 `form-validator` 模組中的 `useFormValidator()` composable 函數
+* 重命名 `form-validator` 模組中的 `Rule` 為 `FormRule`
 
 ### Migration
 
@@ -45,6 +46,13 @@
 -  throw new Error('FormValidator is not provided in the context.')
 -}
 +const formValidator = useFormValidator()
+```
+
+將 `form-validator` 模組中的 `Rule` 類型改為 `FormRule`：
+
+```diff
+-import { Rule } from '@stephenchenorg/astro/form-validator'
++import { FormRule } from '@stephenchenorg/astro/form-validator'
 ```
 
 ## v5.0.2 - 2025-07-15

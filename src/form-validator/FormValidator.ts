@@ -1,8 +1,8 @@
-import type { FormErrors, Rule } from './types'
+import type { FormErrors, FormRule } from './types'
 import { toRaw } from 'vue'
 
 export class FormValidator {
-  rules: Record<string, Rule[]> = {}
+  rules: Record<string, FormRule[]> = {}
   errors: FormErrors = {}
 
   errorsUpdatedCallbacks: ((errors: FormErrors) => void)[] = []
@@ -32,14 +32,14 @@ export class FormValidator {
     return isValid
   }
 
-  prependRules(field: string, rules: Rule | Rule[]): void {
+  prependRules(field: string, rules: FormRule | FormRule[]): void {
     if (!this.rules[field]) {
       this.rules[field] = []
     }
     this.rules[field].unshift(...Array.isArray(rules) ? rules : [rules])
   }
 
-  appendRules(field: string, rules: Rule | Rule[]): void {
+  appendRules(field: string, rules: FormRule | FormRule[]): void {
     if (!this.rules[field]) {
       this.rules[field] = []
     }
