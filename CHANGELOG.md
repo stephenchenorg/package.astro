@@ -3,23 +3,11 @@
 ## Unreleased
 
 * 新增 Astro 與 Vue 元件的導出，以修復 Vite 重複導入的問題
+* 新增 `useFormValidator()` composable 函數
 
 ### Migration
 
 如果你有在專案中引入 Astro 或 Vue 元件，請遵照以下步驟更新：
-
-更新 `@stephenchenorg/astro/form-validator` 的元件導入方式：
-
-```diff
--import { FormValidatorProvider } from '@stephenchenorg/astro/form-validator'
-+import FormValidatorProvider from '@stephenchenorg/astro/form-validator/components/FormValidatorProvider'
-
--import type { FormValidatorProviderExposed } from '@stephenchenorg/astro/form-validator'
-+import type { FormValidatorProviderExposed } from '@stephenchenorg/astro/form-validator/components/FormValidatorProvider'
-
--import { FormField } from '@stephenchenorg/astro/form-validator'
-+import FormField from '@stephenchenorg/astro/form-validator/components/FormField.vue'
-```
 
 更新 `@stephenchenorg/astro/image` 的元件導入方式：
 
@@ -43,6 +31,20 @@
 ```diff
 -import { ProvideUrlConfig } from '@stephenchenorg/astro/query-params'
 +import ProvideUrlConfig from '@stephenchenorg/astro/query-params/components/ProvideUrlConfig.astro'
+```
+
+如果你有客製化表單欄位時，使用 `inject(formValidatorInjectionKey)` 來取得 `formValidator` 實例，請改為使用 `useFormValidator()` 函數：
+
+```diff
+-import { inject } from 'vue'
+-import { formValidatorInjectionKey } from '@stephenchenorg/astro/form-validator'
++import { useFormValidator } from '@stephenchenorg/astro/form-validator'
+
+-const formValidator = inject(formValidatorInjectionKey)
+-if (!formValidator) {
+-  throw new Error('FormValidator is not provided in the context.')
+-}
++const formValidator = useFormValidator()
 ```
 
 ## v5.0.2 - 2025-07-15

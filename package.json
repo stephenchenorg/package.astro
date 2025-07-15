@@ -25,11 +25,6 @@
       "types": "./dist/form-validator/index.d.ts",
       "import": "./dist/form-validator/index.js"
     },
-    "./form-validator/components/FormField.vue": "./dist/form-validator/components/FormField.vue",
-    "./form-validator/components/FormValidatorProvider": {
-      "types": "./dist/form-validator/components/FormValidatorProvider.d.ts",
-      "import": "./dist/form-validator/components/FormValidatorProvider.js"
-    },
     "./image": {
       "types": "./dist/image/index.d.ts",
       "import": "./dist/image/index.js"
