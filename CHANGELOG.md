@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+Nothing yet!
+
+## v6.0.0 - 2025-07-16
+
 * 新增 Astro 與 Vue 元件的導出，以修復 Vite 重複導入的問題
 * 新增 `form-validator` 模組中的 `useFormValidator()` composable 函數
 * 重命名 `form-validator` 模組中的 `Rule` 為 `FormRule`
