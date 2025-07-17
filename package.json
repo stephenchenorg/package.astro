@@ -10,7 +10,14 @@
     "url": "git+https://github.com/stephenchenorg/package.astro.git"
   },
   "keywords": [
-    "astro"
+    "astro",
+    "vue",
+    "components",
+    "query-string",
+    "pagination",
+    "product-variant",
+    "form-validator",
+    "query-params"
   ],
   "exports": {
     "./api": {
