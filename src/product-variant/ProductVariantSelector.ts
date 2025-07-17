@@ -71,6 +71,13 @@ export class ProductVariantSelector {
   }
 
   /**
+   * 確認是否已選擇有效的商品規格
+   */
+  isValidVariantSelected(): boolean {
+    return typeof this.currentVariant !== 'undefined' && this.currentVariant.inventory > 0
+  }
+
+  /**
    * 確認是否有足夠的庫存
    */
   hasEnoughStock(stock: number): boolean {
