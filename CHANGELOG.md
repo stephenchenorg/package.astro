@@ -2,7 +2,11 @@
 
 ## Unreleased
 
-* 移除 `product-variant` 模組
+Nothing yet!
+
+## v7.0.0 - 2025-07-21
+
+* **[BREAKING]** 移除 `product-variant` 模組
 
 ## v6.1.0 - 2025-07-18
 
@@ -10,9 +14,9 @@
 
 ## v6.0.0 - 2025-07-16
 
-* 新增 Astro 與 Vue 元件的導出，以修復 Vite 重複導入的問題
+* **[BREAKING]** 修改 Astro 與 Vue 元件的導出方式，以修復 Vite 重複導入的問題
 * 新增 `form-validator` 模組中的 `useFormValidator()` composable 函數
-* 重命名 `form-validator` 模組中的 `Rule` 為 `FormRule`
+* **[BREAKING]** 重命名 `form-validator` 模組中的 `Rule` 為 `FormRule`
 
 ### Migration
 
