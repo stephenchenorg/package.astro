@@ -9,7 +9,6 @@ export default defineConfig({
     './src/page/index.ts',
     './src/pagination-astro/index.ts',
     './src/pagination-vue/index.ts',
-    './src/product-variant/index.ts',
     './src/query-params/index.ts',
   ],
   copy: [

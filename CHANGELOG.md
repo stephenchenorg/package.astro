@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-Nothing yet!
+* 移除 `product-variant` 模組
 
 ## v6.1.0 - 2025-07-18
 

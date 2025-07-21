@@ -15,7 +15,6 @@
     "components",
     "query-string",
     "pagination",
-    "product-variant",
     "form-validator",
     "query-params"
   ],
@@ -50,10 +49,6 @@
     "./pagination-vue": {
       "types": "./dist/pagination-vue/index.d.ts",
       "import": "./dist/pagination-vue/index.js"
-    },
-    "./product-variant": {
-      "types": "./dist/product-variant/index.d.ts",
-      "import": "./dist/product-variant/index.js"
     },
     "./query-params": {
       "types": "./dist/query-params/index.d.ts",
