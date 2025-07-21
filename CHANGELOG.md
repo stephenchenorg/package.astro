@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+Nothing yet!
+
+## v6.1.0 - 2025-07-18
+
 * 新增 `ProductVariantSelector` 類別中的 `isValidVariantSelected()` 方法，用於確認是否已選擇有效的商品規格
 
 ## v6.0.0 - 2025-07-16
