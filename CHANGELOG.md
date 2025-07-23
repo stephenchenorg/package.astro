@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-Nothing yet!
+* 新增 `FormRule` 的 `when` 屬性以支援條件驗證是否啟用驗證規則
 
 ## v7.1.0 - 2025-07-23
 

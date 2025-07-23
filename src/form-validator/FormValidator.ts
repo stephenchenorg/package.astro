@@ -16,6 +16,10 @@ export class FormValidator {
       const value = data[field]
 
       for (const rule of fieldRules) {
+        if (rule.when && !rule.when(value, data)) {
+          continue
+        }
+
         if (!rule.validate(value, data)) {
           isValid = false
           if (!errors[field]) {
