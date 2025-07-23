@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-Nothing yet!
+* 新增 `validate()` 的第二個參數 `data`，用於在驗證規則中存取其他欄位的值
 
 ## v7.0.0 - 2025-07-21
 
