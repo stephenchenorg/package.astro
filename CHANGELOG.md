@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+Nothing yet!
+
+## v8.0.0 - 2025-07-31
+
 * **[BREAKING]** 新增新的 Vue 分頁元件，用於客戶端動態分頁
 
 ### Migration
