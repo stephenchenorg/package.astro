@@ -5,15 +5,15 @@ export function usePagination(options: {
   total: MaybeRefOrGetter<number>
   currentPage: MaybeRefOrGetter<number>
   url: string
-  perPage?: MaybeRefOrGetter<number>
-  visiblePages?: MaybeRefOrGetter<number>
+  perPage?: MaybeRefOrGetter<number | undefined>
+  visiblePages?: MaybeRefOrGetter<number | undefined>
 }) {
   const total = computed(() => toValue(options.total))
   const currentPage = computed(() => toValue(options.currentPage))
-  const perPage = computed(() => toValue(options.perPage || 12))
+  const perPage = computed(() => toValue(options.perPage) || 12)
 
   const totalPages = computed(() => Math.ceil(total.value / perPage.value))
-  const visiblePages = computed(() => Math.min(toValue(options.visiblePages || 5), totalPages.value))
+  const visiblePages = computed(() => Math.min(toValue(options.visiblePages) || 5, totalPages.value))
   const sideCount = computed(() => Math.floor(visiblePages.value / 2))
 
   const items = computed(() => {
@@ -46,7 +46,6 @@ export function usePagination(options: {
   return {
     items,
     showPagination: computed(() => total.value > perPage.value),
-    currentPage,
     canFirst: computed(() => currentPage.value > 1),
     canPrev: computed(() => currentPage.value > 1),
     canNext: computed(() => currentPage.value < totalPages.value),

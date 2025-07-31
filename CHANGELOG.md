@@ -2,7 +2,41 @@
 
 ## Unreleased
 
-Nothing yet!
+* **[BREAKING]** 新增新的 Vue 分頁元件，用於客戶端動態分頁
+
+### Migration
+
+如果你在使用 `pagination-vue` 模組，請將 `Pagination.astro` 元件中的引入變更為 `pagination-vue-server-side`：
+
+```diff
+-import { usePagination } from '@stephenchenorg/astro/pagination-vue'
++import { usePagination } from '@stephenchenorg/astro/pagination-vue-server-side'
+```
+
+以及刪除 `usePagination()` 導出的 `currentPage`，因為可以直接從 `props.currentPage` 取得：
+
+```diff
+ const {
+   items,
+   showPagination,
+-  currentPage,
+   canFirst,
+   canPrev,
+   canNext,
+   canLast,
+   firstUrl,
+   prevUrl,
+   nextUrl,
+   lastUrl,
+   getUrl,
+ } = usePagination({
+   total: props.total,
+   perPage: props.perPage,
+   visiblePages: props.visiblePages,
+   currentPage: props.currentPage,
+   url: props.url,
+ })
+```
 
 ## v7.2.0 - 2025-07-23
 

@@ -46,9 +46,13 @@
       "types": "./dist/pagination-astro/index.d.ts",
       "import": "./dist/pagination-astro/index.js"
     },
-    "./pagination-vue": {
-      "types": "./dist/pagination-vue/index.d.ts",
-      "import": "./dist/pagination-vue/index.js"
+    "./pagination-vue-client-side": {
+      "types": "./dist/pagination-vue-client-side/index.d.ts",
+      "import": "./dist/pagination-vue-client-side/index.js"
+    },
+    "./pagination-vue-server-side": {
+      "types": "./dist/pagination-vue-server-side/index.d.ts",
+      "import": "./dist/pagination-vue-server-side/index.js"
     },
     "./query-params": {
       "types": "./dist/query-params/index.d.ts",

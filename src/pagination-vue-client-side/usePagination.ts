@@ -1,0 +1,60 @@
+import type { MaybeRefOrGetter } from 'vue'
+import { computed, toValue } from 'vue'
+
+export function usePagination(options: {
+  total: MaybeRefOrGetter<number>
+  currentPage: MaybeRefOrGetter<number>
+  perPage?: MaybeRefOrGetter<number | undefined>
+  visiblePages?: MaybeRefOrGetter<number | undefined>
+  onChange?: (page: number) => void
+}) {
+  const total = computed(() => toValue(options.total))
+  const currentPage = computed(() => toValue(options.currentPage))
+  const perPage = computed(() => toValue(options.perPage) || 12)
+
+  const totalPages = computed(() => Math.ceil(total.value / perPage.value))
+  const visiblePages = computed(() => Math.min(toValue(options.visiblePages) || 5, totalPages.value))
+  const sideCount = computed(() => Math.floor(visiblePages.value / 2))
+
+  const items = computed(() => {
+    const items: number[] = []
+
+    let start = Math.max(1, currentPage.value - sideCount.value)
+    let end = Math.min(totalPages.value, currentPage.value + sideCount.value)
+
+    if (end - start + 1 < visiblePages.value && currentPage.value > 0) {
+      if (currentPage.value <= sideCount.value) {
+        end = Math.min(totalPages.value, start + visiblePages.value - 1)
+      } else if (currentPage.value > totalPages.value - sideCount.value) {
+        start = Math.max(1, end - visiblePages.value + 1)
+      }
+    }
+
+    for (let i = start; i <= end; i++) {
+      items.push(i)
+    }
+
+    return items
+  })
+
+  function gotoPage(page: number) {
+    const newPage = Math.max(1, Math.min(page, totalPages.value))
+    if (newPage !== currentPage.value) {
+      options.onChange?.(newPage)
+    }
+  }
+
+  return {
+    items,
+    showPagination: computed(() => total.value > perPage.value),
+    canFirst: computed(() => currentPage.value > 1),
+    canPrev: computed(() => currentPage.value > 1),
+    canNext: computed(() => currentPage.value < totalPages.value),
+    canLast: computed(() => currentPage.value < totalPages.value),
+    gotoFirst: () => gotoPage(1),
+    gotoPrev: () => gotoPage(currentPage.value - 1),
+    gotoNext: () => gotoPage(currentPage.value + 1),
+    gotoLast: () => gotoPage(totalPages.value),
+    gotoPage,
+  }
+}

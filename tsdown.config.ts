@@ -8,7 +8,8 @@ export default defineConfig({
     './src/image/index.ts',
     './src/page/index.ts',
     './src/pagination-astro/index.ts',
-    './src/pagination-vue/index.ts',
+    './src/pagination-vue-client-side/index.ts',
+    './src/pagination-vue-server-side/index.ts',
     './src/query-params/index.ts',
   ],
   copy: [
