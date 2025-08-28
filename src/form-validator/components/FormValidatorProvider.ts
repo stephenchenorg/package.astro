@@ -33,7 +33,9 @@ const FormValidatorProvider = defineComponent({
       formValidator: () => formValidator,
     })
 
-    return () => slots.default?.()
+    return () => slots.default?.({
+      errors: formValidator.errors,
+    })
   },
 })
 

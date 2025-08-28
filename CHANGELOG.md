@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-Nothing yet!
+* 增加 `<FormValidatorProvider>` 的 `errors` slot
 
 ## v8.0.0 - 2025-07-31
 
