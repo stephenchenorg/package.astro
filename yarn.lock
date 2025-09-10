@@ -1749,12 +1749,13 @@
   resolved "https://registry.yarnpkg.com/@vue/shared/-/shared-3.5.20.tgz#8740b370738c8c7e29e02fa9051cfe6d20114cb4"
   integrity sha512-SoRGP596KU/ig6TfgkCMbXkr4YJ91n/QSdMuqeP5r3hVIYA3CPHUBCc7Skak0EAKV+5lL4KyIh61VA/pK1CIAA==
 
-"@ycs77/eslint-config@^5.0.0":
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/@ycs77/eslint-config/-/eslint-config-5.0.0.tgz#846c357f6534e13595c22ec1a7e889ba89d0a8a0"
-  integrity sha512-cqMdcmR85S9vokYWChHBtLuSU6qAjtd+ZLgWlHbMJKC+EPFinMQhPBnQwdfR3/60RglUs475utA+xiDi6yyy9Q==
+"@ycs77/eslint-config@^5.0.1":
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/@ycs77/eslint-config/-/eslint-config-5.0.1.tgz#f6338b47d0314d965dc8725120726e81349272d8"
+  integrity sha512-isNO/dGJasOcoFgdDnWrYgLpFLz5YsBQTo3KVoLDb+q/M76tbpDgmKkf87IkSqbVZx3Qltkn1rIgNZKU8WbttQ==
   dependencies:
     "@antfu/eslint-config" "~5.2.0"
+    "@typescript-eslint/parser" "^8.39.0"
     eslint-plugin-antfu "^3.1.1"
     local-pkg "^1.1.1"
 
