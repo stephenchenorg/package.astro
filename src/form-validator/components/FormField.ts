@@ -1,4 +1,4 @@
-import type { PropType } from 'vue'
+import type { PropType, SlotsType } from 'vue'
 import type { FormValidator } from '../FormValidator'
 import type { FormRule } from '../types'
 import { defineComponent, ref } from 'vue'
@@ -20,8 +20,13 @@ const FormField = defineComponent({
       default: () => [],
     },
   },
+  slots: Object as SlotsType<{
+    default: {
+      error: string | null
+    }
+  }>,
   setup(props, { slots }) {
-    const error = ref<string | undefined>(undefined)
+    const error = ref<string | null>(null)
 
     const formValidator = useFormValidator()
 
@@ -30,7 +35,7 @@ const FormField = defineComponent({
     }
 
     formValidator.onErrorsUpdated(errors => {
-      error.value = errors[props.id]?.[0]
+      error.value = errors[props.id]?.[0] || null
     })
 
     return () => slots.default?.({

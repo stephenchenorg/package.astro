@@ -1,4 +1,4 @@
-import type { PropType } from 'vue'
+import type { PropType, SlotsType } from 'vue'
 import type { FormErrors } from '../types'
 import { defineComponent, onMounted, provide, watch } from 'vue'
 import { FormValidator } from '../FormValidator'
@@ -16,6 +16,11 @@ const FormValidatorProvider = defineComponent({
       default: () => ({}),
     },
   },
+  slots: Object as SlotsType<{
+    default: {
+      errors: FormErrors
+    }
+  }>,
   setup(props, { slots, expose }) {
     const formValidator = new FormValidator()
 
