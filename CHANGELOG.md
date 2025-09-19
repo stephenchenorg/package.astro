@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+Nothing yet!
+
+## v8.2.0 - 2025-09-20
+
 * 增加 `<FormValidatorProvider>` 和 `<FormField>` 的 slots 定義
 
 ## v8.1.0 - 2025-08-29
