@@ -3030,7 +3030,7 @@ fault@^2.0.0:
   dependencies:
     format "^0.2.0"
 
-fdir@^6.4.4, fdir@^6.5.0:
+fdir@^6.4.4:
   version "6.5.0"
   resolved "https://registry.yarnpkg.com/fdir/-/fdir-6.5.0.tgz#ed2ab967a331ade62f18d077dae192684d50d350"
   integrity sha512-tIbYtZbucOs0BRGqPJkshJUYdL+SDH7dVM8gjy+ERp3WAUjLEFJE+02kanyHtwjWOnwrKYBiwAmM0p4kLJAnXg==
@@ -4894,7 +4894,7 @@ rolldown@latest:
     "@rolldown/binding-win32-ia32-msvc" "1.0.0-beta.34"
     "@rolldown/binding-win32-x64-msvc" "1.0.0-beta.34"
 
-rollup@^4.34.9, rollup@^4.43.0:
+rollup@^4.34.9:
   version "4.49.0"
   resolved "https://registry.yarnpkg.com/rollup/-/rollup-4.49.0.tgz#9751ad9d06a47a4496c3c5c238b27b1422c8b0eb"
   integrity sha512-3IVq0cGJ6H7fKXXEdVt+RcYvRCt8beYY9K1760wGQwSAHZcS9eot1zDG5axUbcp/kWRi5zKIIDX8MoKv/TzvZA==
@@ -5600,24 +5600,10 @@ vite-plugin-vue-inspector@^5.3.1:
     kolorist "^1.8.0"
     magic-string "^0.30.4"
 
-"vite@^5.0.0 || ^6.0.0 || ^7.0.0-0":
-  version "7.1.3"
-  resolved "https://registry.yarnpkg.com/vite/-/vite-7.1.3.tgz#8d70cb02fd6346b4bf1329a6760800538ef0faea"
-  integrity sha512-OOUi5zjkDxYrKhTV3V7iKsoS37VUM7v40+HuwEmcrsf11Cdx9y3DIr2Px6liIcZFwt3XSRpQvFpL3WVy7ApkGw==
-  dependencies:
-    esbuild "^0.25.0"
-    fdir "^6.5.0"
-    picomatch "^4.0.3"
-    postcss "^8.5.6"
-    rollup "^4.43.0"
-    tinyglobby "^0.2.14"
-  optionalDependencies:
-    fsevents "~2.3.3"
-
-vite@^6.3.4, vite@^6.3.5:
-  version "6.3.5"
-  resolved "https://registry.yarnpkg.com/vite/-/vite-6.3.5.tgz#fec73879013c9c0128c8d284504c6d19410d12a3"
-  integrity sha512-cZn6NDFE7wdTpINgs++ZJ4N49W2vRp8LCKrn3Ob1kYNtOo21vfDoaV5GzBfLU4MovSAB8uNRm4jgzVQZ+mBzPQ==
+"vite@^5.0.0 || ^6.0.0 || ^7.0.0-0", vite@^6.3.4, vite@^6.3.5:
+  version "6.3.6"
+  resolved "https://registry.yarnpkg.com/vite/-/vite-6.3.6.tgz#69a976b64930750d40219fbc68c5200874d315c1"
+  integrity sha512-0msEVHJEScQbhkbVTb/4iHZdJ6SXp/AvxL2sjwYQFfBqleHtnCqv1J3sa9zbWz/6kW1m9Tfzn92vW+kZ1WV6QA==
   dependencies:
     esbuild "^0.25.0"
     fdir "^6.4.4"
