@@ -2,7 +2,27 @@
 
 ## Unreleased
 
-Nothing yet!
+* 增加 `mergeArray` 參數至 `queryParamsUrl()` 函數，用於指定哪些參數在合併時應該合併陣列值，以修復陣列值胃脹成更新的問題
+
+### Migration
+
+這個版本修改了 `queryParamsUrl()` 的預設行為，如果你希望保留舊的合併陣列行為，可以在呼叫 `queryParamsUrl()` 時，傳入 `mergeArray` 參數，並指定需要合併陣列值的參數名稱：
+
+```ts
+import { queryParamsUrl } from '@stephenchenorg/astro/query-params'
+
+queryParamsUrl({
+  category: ['value 2', 'value 3'],
+}, {
+  baseUrl: 'https://example.com',
+  params: {
+    category: ['value 1', 'value 2'],
+  },
+}, {
+  // 指定 category 參數在合併時應該合併陣列值
+  mergeArray: ['category'],
+})
+```
 
 ## v8.2.0 - 2025-09-20
 

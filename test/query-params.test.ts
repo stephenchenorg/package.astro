@@ -15,7 +15,7 @@ describe('Query Params', () => {
       tags: ['tag2', 'tag3'],
     }
 
-    const expected = 'https://example.com?page=2&sort=asc&tags=tag1&tags=tag2&tags=tag3'
+    const expected = 'https://example.com?page=2&sort=asc&tags=tag2&tags=tag3'
     const result = queryParamsUrl(userParams, {
       baseUrl: 'https://example.com',
       params,
@@ -38,7 +38,7 @@ describe('Query Params', () => {
     const expected = {
       page: 2,
       sort: 'asc',
-      tags: ['tag1', 'tag2', 'tag3'],
+      tags: ['tag2', 'tag3'],
     }
 
     const result = mergeUrlParams(baseParams, userParams)
@@ -64,6 +64,30 @@ describe('Query Params', () => {
     expect(result).toEqual(expected)
   })
 
+  test('mergeUrlParams() with merge array', () => {
+    const baseParams = {
+      page: 1,
+      sort: 'asc',
+      tags: ['tag1', 'tag2'],
+    }
+
+    const userParams = {
+      page: 2,
+      tags: ['tag2', 'tag3'],
+    }
+
+    const expected = {
+      page: 2,
+      sort: 'asc',
+      tags: ['tag1', 'tag2', 'tag3'],
+    }
+
+    const result = mergeUrlParams(baseParams, userParams, {
+      mergeArray: ['tags'],
+    })
+    expect(result).toEqual(expected)
+  })
+
   test('mergeUrlParams() with undefined value of user params', () => {
     const baseParams = {
       page: 1,
@@ -79,7 +103,7 @@ describe('Query Params', () => {
     const expected = {
       page: 1,
       sort: 'asc',
-      tags: ['tag1', 'tag2', 'tag3'],
+      tags: ['tag2', 'tag3'],
     }
 
     const result = mergeUrlParams(baseParams, userParams)

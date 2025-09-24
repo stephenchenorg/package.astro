@@ -10,6 +10,7 @@ declare global {
 }
 
 export interface QueryParamsUrlOptions {
+  mergeArray?: string[]
   clear?: boolean
   transformParams?: (params: Record<string, any>) => Record<string, any>
 }
@@ -23,6 +24,7 @@ export function queryParamsUrl(
   options: QueryParamsUrlOptions = {}
 ) {
   const {
+    mergeArray = [],
     clear = false,
     transformParams,
   } = options
@@ -36,7 +38,9 @@ export function queryParamsUrl(
 
   if (!clear) {
     // 如果有提供 urlConfig，則使用其 params，並合併當前傳入的 additionalParams
-    params = mergeUrlParams(config.params, additionalParams)
+    params = mergeUrlParams(config.params, additionalParams, {
+      mergeArray,
+    })
 
     // 如果有傳入轉換函數，則對 params 進行轉換
     if (transformParams) {

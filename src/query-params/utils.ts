@@ -1,13 +1,23 @@
+export interface MergeUrlParamsOptions {
+  mergeArray?: string[]
+}
+
 export function mergeUrlParams<
   Params extends Record<string, any> = Record<string, any>
->(baseParams: Params, userParams: Partial<Params>): Params {
+>(baseParams: Params, userParams: Partial<Params>, options: MergeUrlParamsOptions = {}): Params {
+  const { mergeArray = [] } = options
+
   return Object
     .keys(baseParams)
     .reduce((result, key) => {
       if (userParams[key] === null) {
         result[key] = null
       } else if (Array.isArray(baseParams[key])) {
-        result[key] = Array.from(new Set([...baseParams[key], ...(userParams[key] || [])]))
+        if (mergeArray.includes(key)) {
+          result[key] = Array.from(new Set([...baseParams[key], ...(userParams[key] || [])]))
+        } else {
+          result[key] = userParams[key] || baseParams[key] || []
+        }
       } else {
         result[key] = typeof userParams[key] !== 'undefined' ? userParams[key] : baseParams[key]
       }
