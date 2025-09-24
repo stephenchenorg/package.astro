@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+Nothing yet!
+
+## v8.3.0 - 2025-09-25
+
 * 增加 `mergeArray` 參數至 `queryParamsUrl()` 函數，用於指定哪些參數在合併時應該合併陣列值，以修復陣列值胃脹成更新的問題
 
 ### Migration
