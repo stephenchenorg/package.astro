@@ -105,7 +105,7 @@
     "@astrojs/check": "^0.9.4",
     "@astrojs/vue": "^5.1.0",
     "@ycs77/eslint-config": "^5.0.1",
-    "astro": "^5.13.4",
+    "astro": "^5.14.3",
     "bumpp": "^10.2.3",
     "eslint": "^9.34.0",
     "eslint-plugin-astro": "^1.3.1",
