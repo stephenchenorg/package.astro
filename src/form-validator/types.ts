@@ -1,7 +1,7 @@
 export type FormErrors = Record<string, string[]>
 
-export interface FormRule {
-  validate: (value: any, form: Record<string, any>) => boolean
+export interface FormRule<T = any> {
+  validate: (value: T, form: Record<string, any>) => boolean
   message: string
-  when?: (value: any, form: Record<string, any>) => boolean
+  when?: (value: T, form: Record<string, any>) => boolean
 }

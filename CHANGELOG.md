@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-Nothing yet!
+* 新增 `FormRule` 介面的泛型支援，可指定驗證值的類型
 
 ## v8.3.0 - 2025-09-25
 
