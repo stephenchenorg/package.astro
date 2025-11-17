@@ -20,43 +20,43 @@
   ],
   "exports": {
     "./api": {
-      "types": "./dist/api/index.d.ts",
-      "import": "./dist/api/index.js"
+      "types": "./dist/api/index.d.mts",
+      "import": "./dist/api/index.mjs"
     },
     "./company-setting": {
-      "types": "./dist/company-setting/index.d.ts",
-      "import": "./dist/company-setting/index.js"
+      "types": "./dist/company-setting/index.d.mts",
+      "import": "./dist/company-setting/index.mjs"
     },
     "./form-validator": {
-      "types": "./dist/form-validator/index.d.ts",
-      "import": "./dist/form-validator/index.js"
+      "types": "./dist/form-validator/index.d.mts",
+      "import": "./dist/form-validator/index.mjs"
     },
     "./image": {
-      "types": "./dist/image/index.d.ts",
-      "import": "./dist/image/index.js"
+      "types": "./dist/image/index.d.mts",
+      "import": "./dist/image/index.mjs"
     },
     "./image/components/Image.astro": "./dist/image/components/Image.astro",
     "./image/components/ResponsiveImage.astro": "./dist/image/components/ResponsiveImage.astro",
     "./page": {
-      "types": "./dist/page/index.d.ts",
-      "import": "./dist/page/index.js"
+      "types": "./dist/page/index.d.mts",
+      "import": "./dist/page/index.mjs"
     },
     "./page/components/PageFieldRender.astro": "./dist/page/components/PageFieldRender.astro",
     "./pagination-astro": {
-      "types": "./dist/pagination-astro/index.d.ts",
-      "import": "./dist/pagination-astro/index.js"
+      "types": "./dist/pagination-astro/index.d.mts",
+      "import": "./dist/pagination-astro/index.mjs"
     },
     "./pagination-vue-client-side": {
-      "types": "./dist/pagination-vue-client-side/index.d.ts",
-      "import": "./dist/pagination-vue-client-side/index.js"
+      "types": "./dist/pagination-vue-client-side/index.d.mts",
+      "import": "./dist/pagination-vue-client-side/index.mjs"
     },
     "./pagination-vue-server-side": {
-      "types": "./dist/pagination-vue-server-side/index.d.ts",
-      "import": "./dist/pagination-vue-server-side/index.js"
+      "types": "./dist/pagination-vue-server-side/index.d.mts",
+      "import": "./dist/pagination-vue-server-side/index.mjs"
     },
     "./query-params": {
-      "types": "./dist/query-params/index.d.ts",
-      "import": "./dist/query-params/index.js"
+      "types": "./dist/query-params/index.d.mts",
+      "import": "./dist/query-params/index.mjs"
     },
     "./query-params/components/ProvideUrlConfig.astro": "./dist/query-params/components/ProvideUrlConfig.astro"
   },
@@ -96,23 +96,23 @@
   "dependencies": {
     "@graphql-typed-document-node/core": "^3.2.0",
     "awesome-graphql-client": "^2.1.0",
-    "graphql": "^16.11.0",
+    "graphql": "^16.12.0",
     "graphql-tag": "^2.12.6",
     "nanostores": "^1.0.1",
-    "query-string": "^9.2.2"
+    "query-string": "^9.3.1"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.4",
-    "@astrojs/vue": "^5.1.0",
-    "@ycs77/eslint-config": "^5.0.1",
-    "astro": "^5.14.3",
-    "bumpp": "^10.2.3",
-    "eslint": "^9.34.0",
-    "eslint-plugin-astro": "^1.3.1",
-    "eslint-plugin-astro-explicit-wrapper": "^1.0.3",
-    "tsdown": "^0.14.2",
-    "typescript": "^5.9.2",
-    "vitest": "^3.2.4",
-    "vue": "^3.5.20"
+    "@astrojs/check": "^0.9.5",
+    "@astrojs/vue": "^5.1.3",
+    "@ycs77/eslint-config": "^6.0.0",
+    "astro": "^5.15.9",
+    "bumpp": "^10.3.1",
+    "eslint": "^9.39.1",
+    "eslint-plugin-astro": "^1.5.0",
+    "eslint-plugin-astro-explicit-wrapper": "^1.0.5",
+    "tsdown": "^0.16.5",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.10",
+    "vue": "^3.5.24"
   }
 }
