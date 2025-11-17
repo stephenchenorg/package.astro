@@ -1,6 +1,7 @@
 import { defineConfig } from 'tsdown'
 
 export default defineConfig({
+  platform: 'neutral',
   entry: [
     './src/api/index.ts',
     './src/company-setting/index.ts',

@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-Nothing yet!
+* 調整 tsdown 設定以修復輸出檔案副檔名
 
 ## v8.4.0 - 2025-11-18
 
