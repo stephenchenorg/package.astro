@@ -1,6 +1,6 @@
 import type { PropType, SlotsType } from 'vue'
 import type { FormErrors } from '../types'
-import { defineComponent, onMounted, provide, watch } from 'vue'
+import { defineComponent, onMounted, provide, ref, shallowRef, watch } from 'vue'
 import { FormValidator } from '../FormValidator'
 import { formValidatorInjectionKey } from '../injectionKey'
 
@@ -19,12 +19,21 @@ const FormValidatorProvider = defineComponent({
   slots: Object as SlotsType<{
     default: {
       errors: FormErrors
+      hasErrors: boolean
     }
   }>,
   setup(props, { slots, expose }) {
     const formValidator = new FormValidator()
 
+    const errors = shallowRef<FormErrors>({})
+    const hasErrors = ref(false)
+
     provide(formValidatorInjectionKey, formValidator)
+
+    formValidator.onErrorsUpdated(_errors => {
+      hasErrors.value = Object.keys(_errors).length > 0
+      errors.value = structuredClone(_errors)
+    })
 
     onMounted(() => {
       formValidator.setErrors(props.errors)
@@ -39,7 +48,8 @@ const FormValidatorProvider = defineComponent({
     })
 
     return () => slots.default?.({
-      errors: formValidator.errors,
+      errors: errors.value,
+      hasErrors: hasErrors.value,
     })
   },
 })

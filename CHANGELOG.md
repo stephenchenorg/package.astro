@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-Nothing yet!
+* 優化 `FormValidatorProvider` 的 slot 狀態資料
 
 ## v8.4.1 - 2025-11-18
 
