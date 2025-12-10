@@ -50,6 +50,10 @@ export class FormValidator {
     this.rules[field].push(...Array.isArray(rules) ? rules : [rules])
   }
 
+  removeRules(field: string): void {
+    delete this.rules[field]
+  }
+
   setErrors(errors: FormErrors): void {
     this.errors = structuredClone(toRaw(errors))
 

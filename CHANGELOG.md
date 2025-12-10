@@ -2,7 +2,8 @@
 
 ## Unreleased
 
-Nothing yet!
+* 新增 `FormValidator` 類別的 `removeRules()` 方法
+* 新增 `FormField` 元件卸載時自動清除規則和錯誤訊息
 
 ## v8.5.0 - 2025-12-03
 

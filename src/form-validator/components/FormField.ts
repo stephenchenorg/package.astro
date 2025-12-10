@@ -1,12 +1,7 @@
 import type { PropType, SlotsType } from 'vue'
-import type { FormValidator } from '../FormValidator'
 import type { FormRule } from '../types'
-import { defineComponent, ref } from 'vue'
+import { defineComponent, onBeforeUnmount, ref } from 'vue'
 import { useFormValidator } from '../useFormValidator'
-
-export interface FormValidatorProviderExposed {
-  formValidator: () => FormValidator
-}
 
 const FormField = defineComponent({
   name: 'FormField',
@@ -36,6 +31,15 @@ const FormField = defineComponent({
 
     formValidator.onErrorsUpdated(errors => {
       error.value = errors[props.id]?.[0] || null
+    })
+
+    onBeforeUnmount(() => {
+      formValidator.removeRules(props.id)
+
+      // 清除該欄位的錯誤訊息
+      const currentErrors = { ...formValidator.errors }
+      delete currentErrors[props.id]
+      formValidator.setErrors(currentErrors)
     })
 
     return () => slots.default?.({
