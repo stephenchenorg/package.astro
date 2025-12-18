@@ -58,7 +58,7 @@
     "prepack": "npm run build"
   },
   "peerDependencies": {
-    "@stephenchenorg/astro": "^8.6.0 || ^9.0.0",
+    "@stephenchenorg/astro": "^9.0.0",
     "astro": "^5.0.0"
   },
   "dependencies": {

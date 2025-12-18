@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+Nothing yet!
+
+## v9.0.0 - 2025-12-19
+
 * **[BREAKING]** 將 GraphQL 相關模組移動至獨立套件 `@stephenchenorg/astro-graphql`
 * 將 `api` 模組移動至 `@stephenchenorg/astro-graphql` 套件
 * 將 `image` 模組移動至 `@stephenchenorg/astro-graphql` 套件

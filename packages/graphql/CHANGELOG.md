@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+Nothing yet!
+
+## v9.0.0 - 2025-12-19
+
 首次發布。此套件從 `@stephenchenorg/astro` v8.x 拆分出來，包含所有 GraphQL 相關功能。
 
 * 新增模組 `api` - GraphQL API 呼叫相關功能
