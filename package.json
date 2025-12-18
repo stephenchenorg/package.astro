@@ -1,7 +1,7 @@
 {
   "name": "stephenchenorg-astro",
   "type": "module",
-  "version": "0.0.0",
+  "version": "8.6.0",
   "private": true,
   "description": "Stephenchenorg Astro 前端通用套件",
   "license": "MIT",
@@ -22,10 +22,12 @@
     "code-check:graphql": "yarn graphql code-check",
     "core": "yarn workspace @stephenchenorg/astro",
     "graphql": "yarn workspace @stephenchenorg/astro-graphql",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "release": "bumpp --commit \"Release v%s\" -r && npm publish --workspaces"
   },
   "devDependencies": {
     "@ycs77/eslint-config": "^6.2.1",
+    "bumpp": "^10.3.2",
     "eslint": "^9.39.1",
     "eslint-plugin-astro": "^1.5.0",
     "eslint-plugin-astro-explicit-wrapper": "^1.0.5",

@@ -55,8 +55,7 @@
   "scripts": {
     "build": "tsdown",
     "code-check": "astro check",
-    "prepack": "npm run build",
-    "release": "bumpp --commit \"Release v%s\" && npm publish"
+    "prepack": "npm run build"
   },
   "peerDependencies": {
     "@stephenchenorg/astro": "^8.6.0 || ^9.0.0",
@@ -71,7 +70,6 @@
   "devDependencies": {
     "@astrojs/check": "^0.9.6",
     "astro": "^5.16.4",
-    "bumpp": "^10.3.2",
     "tsdown": "^0.18.1",
     "typescript": "^5.9.3"
   }
