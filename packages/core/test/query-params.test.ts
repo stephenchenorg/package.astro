@@ -1,4 +1,4 @@
-import { describe, test, expect } from 'vitest'
+import { describe, expect, test } from 'vitest'
 import { queryParamsUrl } from '../src/query-params/url'
 import { mergeUrlParams } from '../src/query-params/utils'
 

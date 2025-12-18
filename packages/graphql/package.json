@@ -1,0 +1,57 @@
+{
+  "name": "@stephenchenorg/astro-graphql",
+  "type": "module",
+  "version": "8.6.0",
+  "description": "Stephenchenorg Astro 前端 GraphQL 整合串接套件",
+  "license": "MIT",
+  "homepage": "https://stephenchenorg-astro.netlify.app",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stephenchenorg/package.astro.git",
+    "directory": "packages/graphql"
+  },
+  "keywords": [
+    "astro",
+    "graphql",
+    "api"
+  ],
+  "exports": {
+    "./example": {
+      "types": "./dist/example/index.d.ts",
+      "import": "./dist/example/index.js"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "code-check": "astro check",
+    "prepack": "npm run build",
+    "release": "bumpp --commit \"Release v%s\" && npm publish"
+  },
+  "peerDependencies": {
+    "astro": "^5.0.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@astrojs/check": "^0.9.6",
+    "astro": "^5.16.4",
+    "bumpp": "^10.3.2",
+    "tsdown": "^0.18.1",
+    "typescript": "^5.9.3"
+  }
+}

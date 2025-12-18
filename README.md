@@ -1,38 +1,19 @@
 # Stephenchenorg Astro 前端通用套件
 
-[![NPM version][ico-version]][link-npm]
-[![Software License][ico-license]](LICENSE)
-[![Total Downloads][ico-downloads]][link-downloads]
+文件: https://stephenchenorg-astro.netlify.app
 
-## 安裝
+## 套件
 
-```bash
-# npm
-npm install @stephenchenorg/astro
-# yarn
-yarn add @stephenchenorg/astro
-```
+| 套件名稱 | 版本 |
+| -------- | ---- |
+| [@stephenchenorg/astro](packages/core) | [![NPM version][core-ico-version]][core-link-npm] |
+| [@stephenchenorg/astro-graphql](packages/graphql) | [![NPM version][graphql-ico-version]][graphql-link-npm] |
 
-## 文件
+[core-ico-version]: https://img.shields.io/npm/v/@stephenchenorg/astro?style=flat-square
+[core-link-npm]: https://www.npmjs.com/package/@stephenchenorg/astro
+[graphql-ico-version]: https://img.shields.io/npm/v/@stephenchenorg/astro-graphql?style=flat-square
+[graphql-link-npm]: https://www.npmjs.com/package/@stephenchenorg/astro-graphql
 
-https://stephenchenorg-astro.netlify.app
+## License
 
-## 開發
-
-```bash
-yarn
-yarn build
-```
-
-## 發布套件
-
-```bash
-npm login
-npm run release
-```
-
-[ico-version]: https://img.shields.io/npm/v/@stephenchenorg/astro?style=flat-square
-[ico-license]: https://img.shields.io/badge/license-MIT-brightgreen?style=flat-square
-[ico-downloads]: https://img.shields.io/npm/dt/@stephenchenorg/astro?style=flat-square
-[link-npm]: https://www.npmjs.com/package/@stephenchenorg/astro
-[link-downloads]: https://www.npmjs.com/package/@stephenchenorg/astro
+[MIT LICENSE](LICENSE.md)
