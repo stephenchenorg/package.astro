@@ -2,7 +2,82 @@
 
 ## Unreleased
 
-Nothing yet!
+* **[BREAKING]** 將 GraphQL 相關模組移動至獨立套件 `@stephenchenorg/astro-graphql`
+* 將 `api` 模組移動至 `@stephenchenorg/astro-graphql` 套件
+* 將 `image` 模組移動至 `@stephenchenorg/astro-graphql` 套件
+* 將 `company-setting` 模組中的 GraphQL fragment 移動至 `@stephenchenorg/astro-graphql` 套件
+* 將 `page` 模組中和 GraphQL 相關的部分移動至 `@stephenchenorg/astro-graphql` 套件
+
+### Migration
+
+這個版本將 GraphQL 相關的模組移動至 `@stephenchenorg/astro-graphql` 套件，如果你有使用這些模組，請將部分引入路徑改為 `@stephenchenorg/astro-graphql`。
+
+更新 `api` 模組的引入路徑：
+
+```diff
+-import type { ... } from '@stephenchenorg/astro/api'
++import type { ... } from '@stephenchenorg/astro-graphql/api'
+
+-import { ... } from '@stephenchenorg/astro/api'
++import { ... } from '@stephenchenorg/astro-graphql/api'
+```
+
+更新 `company-setting` 模組的 fragment 引入路徑：
+
+```diff
+-import { companySettingFields } from '@stephenchenorg/astro/company-setting'
++import { companySettingFields } from '@stephenchenorg/astro-graphql/company-setting'
+```
+
+更新 `image` 模組的引入路徑：
+
+```diff
+-import type { ... } from '@stephenchenorg/astro/image'
++import type { ... } from '@stephenchenorg/astro-graphql/image'
+
+-import { ... } from '@stephenchenorg/astro/image'
++import { ... } from '@stephenchenorg/astro-graphql/image'
+
+-import Image from '@stephenchenorg/astro/image/components/Image.astro'
++import Image from '@stephenchenorg/astro-graphql/image/components/Image.astro'
+
+-import ResponsiveImage from '@stephenchenorg/astro/image/components/ResponsiveImage.astro'
++import ResponsiveImage from '@stephenchenorg/astro-graphql/image/components/ResponsiveImage.astro'
+```
+
+更新 `page` 模組部分的引入路徑：
+
+```diff
+ import type {
+   DataPage,
+   Page,
+   PageField,
+   PagePlainTextField,
+   PagePlainTextareaField,
+   PageContentField,
+   PageImageField,
+-} from '@stephenchenorg/astro/page'
++} from '@stephenchenorg/astro-graphql/page'
+
+-import { seoMetaFields } from '@stephenchenorg/astro/page'
++import { seoMetaFields } from '@stephenchenorg/astro-graphql/page'
+
+-import { pageFields } from '@stephenchenorg/astro/page'
++import { pageFields } from '@stephenchenorg/astro-graphql/page'
+
+ import {
+   isPlainTextField,
+   isPlainTextareaField,
+   isContentField,
+   isImageField,
+   pageTextField,
+   pageImageFieldForBackground
+-} from '@stephenchenorg/astro/page'
++} from '@stephenchenorg/astro-graphql/page'
+
+-import PageFieldRender from '@stephenchenorg/astro/page/components/PageFieldRender.astro'
++import PageFieldRender from '@stephenchenorg/astro-graphql/page/components/PageFieldRender.astro'
+```
 
 ## v8.6.0 - 2025-12-11
 

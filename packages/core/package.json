@@ -20,10 +20,6 @@
     "query-params"
   ],
   "exports": {
-    "./api": {
-      "types": "./dist/api/index.d.ts",
-      "import": "./dist/api/index.js"
-    },
     "./company-setting": {
       "types": "./dist/company-setting/index.d.ts",
       "import": "./dist/company-setting/index.js"
@@ -32,17 +28,10 @@
       "types": "./dist/form-validator/index.d.ts",
       "import": "./dist/form-validator/index.js"
     },
-    "./image": {
-      "types": "./dist/image/index.d.ts",
-      "import": "./dist/image/index.js"
-    },
-    "./image/components/Image.astro": "./dist/image/components/Image.astro",
-    "./image/components/ResponsiveImage.astro": "./dist/image/components/ResponsiveImage.astro",
     "./page": {
       "types": "./dist/page/index.d.ts",
       "import": "./dist/page/index.js"
     },
-    "./page/components/PageFieldRender.astro": "./dist/page/components/PageFieldRender.astro",
     "./pagination-astro": {
       "types": "./dist/pagination-astro/index.d.ts",
       "import": "./dist/pagination-astro/index.js"
@@ -94,10 +83,6 @@
     }
   },
   "dependencies": {
-    "@graphql-typed-document-node/core": "^3.2.0",
-    "awesome-graphql-client": "^2.1.0",
-    "graphql": "^16.12.0",
-    "graphql-tag": "^2.12.6",
     "nanostores": "^1.1.0",
     "query-string": "^9.3.1"
   },

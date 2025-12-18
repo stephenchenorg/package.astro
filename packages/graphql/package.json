@@ -16,10 +16,25 @@
     "api"
   ],
   "exports": {
-    "./example": {
-      "types": "./dist/example/index.d.ts",
-      "import": "./dist/example/index.js"
-    }
+    "./api": {
+      "types": "./dist/api/index.d.ts",
+      "import": "./dist/api/index.js"
+    },
+    "./company-setting": {
+      "types": "./dist/company-setting/index.d.ts",
+      "import": "./dist/company-setting/index.js"
+    },
+    "./image": {
+      "types": "./dist/image/index.d.ts",
+      "import": "./dist/image/index.js"
+    },
+    "./image/components/Image.astro": "./dist/image/components/Image.astro",
+    "./image/components/ResponsiveImage.astro": "./dist/image/components/ResponsiveImage.astro",
+    "./page": {
+      "types": "./dist/page/index.d.ts",
+      "import": "./dist/page/index.js"
+    },
+    "./page/components/PageFieldRender.astro": "./dist/page/components/PageFieldRender.astro"
   },
   "typesVersions": {
     "*": {
@@ -44,9 +59,15 @@
     "release": "bumpp --commit \"Release v%s\" && npm publish"
   },
   "peerDependencies": {
+    "@stephenchenorg/astro": "^8.6.0 || ^9.0.0",
     "astro": "^5.0.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@graphql-typed-document-node/core": "^3.2.0",
+    "awesome-graphql-client": "^2.1.0",
+    "graphql": "^16.12.0",
+    "graphql-tag": "^2.12.6"
+  },
   "devDependencies": {
     "@astrojs/check": "^0.9.6",
     "astro": "^5.16.4",

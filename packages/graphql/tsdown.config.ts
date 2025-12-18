@@ -3,7 +3,11 @@ import { defineConfig } from 'tsdown'
 export default defineConfig({
   platform: 'neutral',
   entry: [
-    './src/example/index.ts',
+    './src/*/index.ts',
+  ],
+  copy: [
+    { from: 'src/image/components', to: 'dist/image' },
+    { from: 'src/page/components', to: 'dist/page' },
   ],
   dts: true,
 })
