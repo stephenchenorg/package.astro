@@ -4,6 +4,42 @@
 
 Nothing yet!
 
+## v10.0.0 - 2025-12-20
+
+* **[BREAKING]** 更新 `form-validator` 模組中的 `<FormValidatorProvider>` 元件，必須從外部傳入 `formValidator` 實例
+
+### Migration
+
+需要更新 `<FormValidatorProvider>` 元件的引入方式，並且手動傳入 `formValidator` 實例：
+
+```diff
+ <template>
+-  <FormValidatorProvider ref="formValidatorProvider" :errors>
++  <FormValidatorProvider :form-validator :errors>
+     <!-- ... -->
+   </FormValidatorProvider>
+ </template>
+
+ <script setup lang="ts">
+-import type { FormErrors, FormValidatorProviderExposed } from '@stephenchenorg/astro/ form-validator'
++import type { FormErrors } from '@stephenchenorg/astro/ form-validator'
+-import { FormValidatorProvider } from '@stephenchenorg/astro/form-validator'
++import { FormValidatorProvider, createFormValidator } from '@stephenchenorg/astro/form-validator'
+
+-const formValidatorProvider = useTemplateRef<FormValidatorProviderExposed> ('formValidatorProvider')
++const formValidator = createFormValidator()
+
+ function handleSubmit() {
+-  const formValidator = formValidatorProvider.value!.formValidator()
+   if (!formValidator.validate(form)) {
+     // ...
+     return
+   }
+
+   // ...
+ }
+```
+
 ## v9.0.0 - 2025-12-19
 
 * **[BREAKING]** 將 GraphQL 相關模組移動至獨立套件 `@stephenchenorg/astro-graphql`
