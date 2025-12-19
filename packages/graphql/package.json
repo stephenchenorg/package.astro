@@ -1,7 +1,7 @@
 {
   "name": "@stephenchenorg/astro-graphql",
   "type": "module",
-  "version": "9.0.0",
+  "version": "10.0.0",
   "description": "Stephenchenorg Astro 前端 GraphQL 整合串接套件",
   "license": "MIT",
   "homepage": "https://stephenchenorg-astro.netlify.app",
