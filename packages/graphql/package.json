@@ -28,13 +28,12 @@
       "types": "./dist/image/index.d.ts",
       "import": "./dist/image/index.js"
     },
-    "./image/components/Image.astro": "./dist/image/components/Image.astro",
-    "./image/components/ResponsiveImage.astro": "./dist/image/components/ResponsiveImage.astro",
+    "./image/components/*": "./dist/image/components/*",
     "./page": {
       "types": "./dist/page/index.d.ts",
       "import": "./dist/page/index.js"
     },
-    "./page/components/PageFieldRender.astro": "./dist/page/components/PageFieldRender.astro"
+    "./page/components/*": "./dist/page/components/*"
   },
   "typesVersions": {
     "*": {
