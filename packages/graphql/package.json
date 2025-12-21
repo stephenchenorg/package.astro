@@ -16,6 +16,7 @@
     "api"
   ],
   "exports": {
+    "./package.json": "./package.json",
     "./api": {
       "types": "./dist/api/index.d.ts",
       "import": "./dist/api/index.js"

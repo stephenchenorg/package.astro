@@ -20,6 +20,7 @@
     "query-params"
   ],
   "exports": {
+    "./package.json": "./package.json",
     "./company-setting": {
       "types": "./dist/company-setting/index.d.ts",
       "import": "./dist/company-setting/index.js"
