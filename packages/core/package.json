@@ -70,8 +70,8 @@
   "scripts": {
     "build": "tsdown",
     "test": "vitest",
-    "code-check": "astro check && npm run test -- --run",
-    "prepack": "npm run build"
+    "code-check": "astro check && pnpm test --run",
+    "prepack": "pnpm build"
   },
   "peerDependencies": {
     "astro": "^5.0.0",
@@ -83,16 +83,16 @@
     }
   },
   "dependencies": {
-    "nanostores": "^1.1.0",
-    "query-string": "^9.3.1"
+    "nanostores": "catalog:prod",
+    "query-string": "catalog:prod"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.6",
-    "@astrojs/vue": "^5.1.4",
-    "astro": "^5.16.11",
-    "tsdown": "^0.19.0",
-    "typescript": "^5.9.3",
-    "vitest": "^4.0.17",
-    "vue": "^3.5.27"
+    "@astrojs/check": "catalog:dev",
+    "@astrojs/vue": "catalog:dev",
+    "astro": "catalog:dev",
+    "tsdown": "catalog:dev",
+    "typescript": "catalog:dev",
+    "vitest": "catalog:dev",
+    "vue": "catalog:dev"
   }
 }

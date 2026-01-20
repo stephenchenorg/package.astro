@@ -3,34 +3,34 @@
   "type": "module",
   "version": "10.0.1",
   "private": true,
+  "packageManager": "pnpm@10.28.1",
   "description": "Stephenchenorg Astro 前端通用套件",
   "license": "MIT",
-  "workspaces": [
-    "packages/*"
-  ],
   "engines": {
     "node": ">=22"
   },
   "scripts": {
-    "build": "run-s build:*",
-    "build:core": "yarn core build",
-    "build:graphql": "yarn graphql build",
-    "test": "run-s test:*",
-    "test:core": "yarn core test --run",
-    "code-check": "run-s code-check:*",
-    "code-check:core": "yarn core code-check",
-    "code-check:graphql": "yarn graphql code-check",
-    "core": "yarn workspace @stephenchenorg/astro",
-    "graphql": "yarn workspace @stephenchenorg/astro-graphql",
+    "build": "run-s build:\\*",
+    "build:core": "pnpm -C packages/core build",
+    "build:graphql": "pnpm -C packages/graphql build",
+    "test": "run-s test:\\*",
+    "test:core": "pnpm -C packages/core test --run",
+    "code-check": "run-s code-check:\\*",
+    "code-check:core": "pnpm -C packages/core code-check",
+    "code-check:graphql": "pnpm -C packages/graphql code-check",
     "lint": "eslint .",
-    "release": "bumpp --commit \"Release v%s\" -r && npm publish --workspaces"
+    "release": "bumpp --commit \"Release v%s\" -r && pnpm publish -r"
   },
   "devDependencies": {
-    "@ycs77/eslint-config": "^7.0.0",
-    "bumpp": "^10.4.0",
-    "eslint": "^9.39.2",
-    "eslint-plugin-astro": "^1.5.0",
-    "eslint-plugin-astro-explicit-wrapper": "^1.0.5",
-    "npm-run-all2": "^8.0.4"
+    "@ycs77/eslint-config": "catalog:dev",
+    "bumpp": "catalog:dev",
+    "eslint": "catalog:dev",
+    "eslint-plugin-astro": "catalog:dev",
+    "eslint-plugin-astro-explicit-wrapper": "catalog:dev",
+    "npm-run-all2": "catalog:dev"
+  },
+  "resolutions": {
+    "chokidar": "catalog:dev",
+    "semver": "catalog:dev"
   }
 }

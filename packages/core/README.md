@@ -11,6 +11,8 @@
 npm install @stephenchenorg/astro
 # yarn
 yarn add @stephenchenorg/astro
+# pnpm
+pnpm add @stephenchenorg/astro
 ```
 
 ## 文件
@@ -20,15 +22,15 @@ https://stephenchenorg-astro.netlify.app
 ## 開發
 
 ```bash
-yarn
-yarn build
+pnpm install
+pnpm build
 ```
 
 ## 發布套件
 
 ```bash
-npm login
-npm run release
+pnpm login
+pnpm release
 ```
 
 ## License
