@@ -4,6 +4,10 @@
 
 Nothing yet!
 
+## v10.0.1 - 2026-01-20
+
+更新依賴套件版本
+
 ## v10.0.0 - 2025-12-20
 
 * **[BREAKING]** 更新 `form-validator` 模組中的 `<FormValidatorProvider>` 元件，必須從外部傳入 `formValidator` 實例
