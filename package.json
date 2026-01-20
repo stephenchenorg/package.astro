@@ -1,7 +1,7 @@
 {
   "name": "stephenchenorg-astro",
   "type": "module",
-  "version": "10.0.1",
+  "version": "11.0.0",
   "private": true,
   "packageManager": "pnpm@10.28.1",
   "description": "Stephenchenorg Astro 前端通用套件",
