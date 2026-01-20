@@ -19,7 +19,7 @@
     "code-check:core": "pnpm -C packages/core code-check",
     "code-check:graphql": "pnpm -C packages/graphql code-check",
     "lint": "eslint .",
-    "release": "bumpp --commit \"Release v%s\" -r && pnpm publish -r"
+    "release": "bumpp --commit \"Release v%s\" -r"
   },
   "devDependencies": {
     "@ycs77/eslint-config": "catalog:dev",

@@ -26,13 +26,6 @@ pnpm install
 pnpm build
 ```
 
-## 發布套件
-
-```bash
-pnpm login
-pnpm release
-```
-
 ## License
 
 [MIT LICENSE](LICENSE.md)
