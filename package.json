@@ -26,9 +26,9 @@
     "release": "bumpp --commit \"Release v%s\" -r && npm publish --workspaces"
   },
   "devDependencies": {
-    "@ycs77/eslint-config": "^6.2.1",
-    "bumpp": "^10.3.2",
-    "eslint": "^9.39.1",
+    "@ycs77/eslint-config": "^7.0.0",
+    "bumpp": "^10.4.0",
+    "eslint": "^9.39.2",
     "eslint-plugin-astro": "^1.5.0",
     "eslint-plugin-astro-explicit-wrapper": "^1.0.5",
     "npm-run-all2": "^8.0.4"
