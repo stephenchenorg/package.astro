@@ -1,5 +1,6 @@
 import type { FormErrors, FormRule } from './types'
 import { toRaw } from 'vue'
+import { objectDotProp } from './utils'
 
 export class FormValidator {
   rules: Record<string, FormRule[]> = {}
@@ -13,7 +14,7 @@ export class FormValidator {
 
     for (const field in this.rules) {
       const fieldRules = this.rules[field]
-      const value = data[field]
+      const value = objectDotProp(data, field)
 
       for (const rule of fieldRules) {
         if (rule.when && !rule.when(value, data)) {
