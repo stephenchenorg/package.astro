@@ -4,6 +4,10 @@
 
 Nothing yet!
 
+## v11.0.2 - 2026-03-04
+
+* 修復 `peerDependencies` 中以支援 `@stephenchenorg/astro` 的 `^11.0.0` 版本
+
 ## v11.0.1 - 2026-03-04
 
 * 更新依賴套件版本
