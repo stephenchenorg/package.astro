@@ -14,7 +14,10 @@ export class FormValidator {
 
     for (const field in this.rules) {
       const fieldRules = this.rules[field]
-      const value = objectDotProp(data, field)
+
+      const value = field in data
+        ? data[field]
+        : objectDotProp(data, field)
 
       for (const rule of fieldRules) {
         if (rule.when && !rule.when(value, data)) {

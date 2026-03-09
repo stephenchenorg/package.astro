@@ -4,6 +4,10 @@
 
 Nothing yet!
 
+## v11.0.4 - 2026-03-09
+
+*no changes*
+
 ## v11.0.3 - 2026-03-05
 
 *no changes*

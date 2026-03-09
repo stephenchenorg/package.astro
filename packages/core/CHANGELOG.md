@@ -4,6 +4,10 @@
 
 Nothing yet!
 
+## v11.0.4 - 2026-03-09
+
+* 修復 `form-validator` 模組中 `validate()` 方法在欄位名稱包含 `.` 字元時無法正確讀取值的問題
+
 ## v11.0.3 - 2026-03-05
 
 * 修復 `form-validator` 模組中巢狀欄位（如 `sections.0.title`）導致驗證規則無法正確取得欄位值的問題
